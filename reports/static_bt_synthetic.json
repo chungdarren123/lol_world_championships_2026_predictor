@@ -1,0 +1,280 @@
+{
+  "status": "diagnostic_fit_sampling_passed",
+  "forecast_ready": false,
+  "config": {
+    "model": "static_region_team_bradley_terry_v1",
+    "sampler": "numpyro",
+    "max_tree_depth": 10,
+    "region_scale_prior": 1.0,
+    "team_scale_prior": 1.0,
+    "draws": 1000,
+    "tune": 1000,
+    "chains": 4,
+    "target_accept": 0.95,
+    "seed": 20261018,
+    "prior_draws": 1000,
+    "result_delay_minutes": 60,
+    "diagnostic_limits": {
+      "max_rhat": 1.01,
+      "min_bulk_ess": 400,
+      "min_tail_ess": 400,
+      "min_bfmi": 0.3,
+      "max_divergences": 0
+    }
+  },
+  "provenance": {
+    "synthetic": true
+  },
+  "coverage": {
+    "games": 2880,
+    "series": 2880,
+    "teams": 9,
+    "regions": 3,
+    "matchup_pairs": 36,
+    "cross_region_games": 2160,
+    "cross_region_links": [
+      {
+        "region_a": "Synthetic_A",
+        "region_b": "Synthetic_B",
+        "games": 720
+      },
+      {
+        "region_a": "Synthetic_A",
+        "region_b": "Synthetic_C",
+        "games": 720
+      },
+      {
+        "region_a": "Synthetic_B",
+        "region_b": "Synthetic_C",
+        "games": 720
+      }
+    ],
+    "region_components": [
+      [
+        "Synthetic_A",
+        "Synthetic_B",
+        "Synthetic_C"
+      ]
+    ],
+    "team_component_sizes": [
+      9
+    ]
+  },
+  "sampling": {
+    "passed": true,
+    "checks": {
+      "finite_diagnostics": true,
+      "rhat": true,
+      "bulk_ess": true,
+      "tail_ess": true,
+      "bfmi": true,
+      "divergences": true,
+      "tree_depth": true
+    },
+    "max_rhat": 1.004196325052804,
+    "min_bulk_ess": 442.0541531545986,
+    "min_tail_ess": 609.4106619132859,
+    "bfmi_by_chain": [
+      0.7015909802365773,
+      0.7472732997570548,
+      0.8077513850554477,
+      0.715962694763568
+    ],
+    "divergences": 0,
+    "fixed_parameters_omitted": 0,
+    "limits": {
+      "max_rhat": 1.01,
+      "min_bulk_ess": 400,
+      "min_tail_ess": 400,
+      "min_bfmi": 0.3,
+      "max_divergences": 0
+    }
+  },
+  "region_summaries": [
+    {
+      "region": "Synthetic_A",
+      "mean": -0.7126570822313306,
+      "sd": 0.04067040310697648,
+      "q05": -0.7804971559960747,
+      "q95": -0.6461233157149429
+    },
+    {
+      "region": "Synthetic_B",
+      "mean": 0.055599776583306476,
+      "sd": 0.0384881164799532,
+      "q05": -0.006978490269937167,
+      "q95": 0.12061816070644414
+    },
+    {
+      "region": "Synthetic_C",
+      "mean": 0.6570573056480243,
+      "sd": 0.039936146218424444,
+      "q05": 0.592586078858216,
+      "q95": 0.7236657413127983
+    }
+  ],
+  "prior_predictive": {
+    "interpretation": "Equal weight per observed matchup pair; not per game.",
+    "matchup_probability": {
+      "mean": 0.494573565579736,
+      "sd": 0.2817661372220408,
+      "q05": 0.034556049683546114,
+      "q95": 0.9636452713054084
+    },
+    "fraction_below_01_or_above_99": 0.043138888888888886
+  },
+  "model_checks": {
+    "interpretation": "IN-SAMPLE checks only; not held-out performance or calibration validation. Multiple group intervals are descriptive discrepancy checks, not significance tests.",
+    "posterior_predictive_groups": {
+      "all": {
+        "games": 2880,
+        "observed_blue_win_rate": 0.30694444444444446,
+        "replicated_blue_win_rate": {
+          "mean": 0.31510034722222224,
+          "sd": 0.010948175340311943,
+          "q05": 0.2968576388888889,
+          "q95": 0.3329861111111111
+        },
+        "outside_central_90_predictive_interval": false
+      },
+      "cross_region": {
+        "games": 2160,
+        "observed_blue_win_rate": 0.2962962962962963,
+        "replicated_blue_win_rate": {
+          "mean": 0.3028277777777778,
+          "sd": 0.013022913093163864,
+          "q05": 0.28194444444444444,
+          "q95": 0.32456018518518515
+        },
+        "outside_central_90_predictive_interval": false
+      },
+      "same_region": {
+        "games": 720,
+        "observed_blue_win_rate": 0.3388888888888889,
+        "replicated_blue_win_rate": {
+          "mean": 0.35191805555555555,
+          "sd": 0.020113673821910247,
+          "q05": 0.31937499999999996,
+          "q95": 0.38479166666666664
+        },
+        "outside_central_90_predictive_interval": false
+      },
+      "SYNTHETIC/synthetic_recovery": {
+        "games": 2880,
+        "observed_blue_win_rate": 0.30694444444444446,
+        "replicated_blue_win_rate": {
+          "mean": 0.31510034722222224,
+          "sd": 0.010948175340311943,
+          "q05": 0.2968576388888889,
+          "q95": 0.3329861111111111
+        },
+        "outside_central_90_predictive_interval": false
+      }
+    },
+    "in_sample_calibration": [
+      {
+        "lower": 0.0,
+        "upper": 0.1,
+        "games": 80,
+        "mean_probability": 0.09556050575178317,
+        "observed_rate": 0.1
+      },
+      {
+        "lower": 0.1,
+        "upper": 0.2,
+        "games": 400,
+        "mean_probability": 0.15966887785959305,
+        "observed_rate": 0.195
+      },
+      {
+        "lower": 0.2,
+        "upper": 0.3,
+        "games": 880,
+        "mean_probability": 0.25335044400143036,
+        "observed_rate": 0.225
+      },
+      {
+        "lower": 0.3,
+        "upper": 0.4,
+        "games": 960,
+        "mean_probability": 0.35951709720661723,
+        "observed_rate": 0.35
+      },
+      {
+        "lower": 0.4,
+        "upper": 0.5,
+        "games": 400,
+        "mean_probability": 0.43853640559419643,
+        "observed_rate": 0.4325
+      },
+      {
+        "lower": 0.5,
+        "upper": 0.6,
+        "games": 160,
+        "mean_probability": 0.569352417412718,
+        "observed_rate": 0.56875
+      }
+    ],
+    "in_sample_log_loss": 0.5895062190196869,
+    "in_sample_brier": 0.2011054859089086,
+    "maximum_symmetry_error": 2.220446049250313e-16
+  },
+  "versions": {
+    "pymc": "5.25.1",
+    "arviz": "0.22.0",
+    "numpy": "2.3.5",
+    "pytensor": "2.31.7",
+    "scipy": "1.18.1",
+    "pandas": "3.0.6",
+    "numpyro": "0.19.0",
+    "jax": "0.7.2",
+    "jaxlib": "0.7.2"
+  },
+  "python_version": "3.12.14",
+  "limitations": [
+    "Synthetic data with known fixed strengths only; no real-team conclusions or historical timing assumptions apply.",
+    "One seeded recovery experiment is not simulation-based calibration across many simulated datasets.",
+    "Synthetic games match the model's conditional-independence assumptions; real games may violate them.",
+    "Sampling success and recovery here do not establish out-of-sample accuracy on real tournaments."
+  ],
+  "model_check_warnings": [],
+  "package_source_sha256": "fb2584c980ed60ef0da398ee0aff75f81370f81719626248d543cb0dc669c01a",
+  "artifact_sha256": {
+    "inference_trace.npz": "69afa24b373445c2714ad98b9de2b4d49b26be6031cb9036740584c7b29cf665",
+    "parameter_diagnostics.csv": "3cce3b1d0e859ca1196801b87adb9203cb764f29a720c9acf6325c32fa9a3032",
+    "posterior_draws.npz": "a1d0cbd904fbe8b96118b010f76172ea3377c7fb0610b0f3daee9f01e24253e4",
+    "posterior_metadata.json": "93d018ab9b3d94bad791d9e0dd9d7f6a4ccc6ec8de66135041e6da3c8c54c3b8",
+    "region_intervals.png": "6c8d8862f8f3e5d6bfc85047b268f49a8bed2f57ca2b09ee22b91d2daa97536d",
+    "regions.csv": "53961820512679b0ddcf1a825b0f228d47a0541aa6a0192c86e829742c540e3c",
+    "scale_traces.png": "39b415b499ef8c074282857817c213e2378d62e70036e5ea74b800e034300b4b",
+    "teams.csv": "c2453992e2eeaccb49b61d8bc9c1938b4c421fa9d30cc19d1f89a2106d5aabf1"
+  },
+  "recovery": {
+    "strength_rmse": 0.05915736645521686,
+    "central_90_interval_coverage": 1.0,
+    "truth": [
+      -1.2,
+      -0.7,
+      -0.19999999999999996,
+      -0.5,
+      0.0,
+      0.5,
+      0.19999999999999996,
+      0.7,
+      1.2
+    ],
+    "posterior_means": [
+      -1.1412793216626302,
+      -0.7904529683753864,
+      -0.2062389566559753,
+      -0.42273194438220213,
+      0.045053211424931586,
+      0.5444780627071896,
+      0.20281311294704765,
+      0.658433326762747,
+      1.1099254772342815
+    ],
+    "passed": true,
+    "interpretation": "One seeded recovery smoke test, not simulation-based calibration."
+  }
+}

@@ -1,0 +1,3782 @@
+{
+  "status": "audited",
+  "source": {
+    "file_name": "2026_LoL_esports_match_data_from_OraclesElixir.csv",
+    "bytes": 78007452,
+    "sha256": "68bb4fd24bc7bfd643f0aba476ed6ad98e17a4812135cbf405295ba0f64c79d0",
+    "source_url": null,
+    "retrieved_at_utc": null,
+    "audited_at_utc": "2026-10-17T22:16:09.806343+00:00",
+    "availability_caveat": "Match timestamps do not prove data was published before the cutoff. A later download may contain backfills or corrections."
+  },
+  "config": {
+    "season": 2026,
+    "cutoff_utc": "2026-10-15T18:00:00Z",
+    "cutoff_basis": "Scheduled first Play-In start; conservative forecast freeze, not a verified actual game-server start.",
+    "cutoff_source": "https://lolesports.com/en-GB/news/worlds-2026-primer",
+    "naive_timestamp_timezone": "UTC",
+    "timestamp_timezone_verified": false,
+    "duration_unit": "seconds",
+    "duration_unit_verified": false,
+    "retention_policy": {
+      "missing_timed_statistics": "Retain games and preserve missing values; do not replace with zero or impute in the audit.",
+      "lineup_changes": "Retain games and track the lineup actually used."
+    },
+    "season_exceptions": [
+      {
+        "id": "LCS_2027_promotion_played_2026",
+        "league": "LCS",
+        "source_season": 2027,
+        "start_utc": "2026-10-05T00:00:00Z",
+        "end_utc_exclusive": "2026-10-14T00:00:00Z",
+        "split": "",
+        "playoffs": "0",
+        "source": "https://lolesports.com/en-US/news/lcs-promotion-tournament-wsci"
+      },
+      {
+        "id": "CBLOL_2027_promotion_played_2026",
+        "league": "CBLOL",
+        "source_season": 2027,
+        "start_utc": "2026-09-28T00:00:00Z",
+        "end_utc_exclusive": "2026-10-14T00:00:00Z",
+        "split": "",
+        "playoffs": "0",
+        "source": "https://lolesports.com/pt-BR/lolesports/news/torneio-de-promoo-ao-cblol-wsci"
+      }
+    ],
+    "leagues": {
+      "LCK": {
+        "aliases": [
+          "LCK"
+        ],
+        "region": "Korea"
+      },
+      "LPL": {
+        "aliases": [
+          "LPL"
+        ],
+        "region": "China"
+      },
+      "LEC": {
+        "aliases": [
+          "LEC"
+        ],
+        "region": "EMEA"
+      },
+      "LCS": {
+        "aliases": [
+          "LCS"
+        ],
+        "region": "North America"
+      },
+      "LCP": {
+        "aliases": [
+          "LCP"
+        ],
+        "region": "Asia Pacific"
+      },
+      "CBLOL": {
+        "aliases": [
+          "CBLOL",
+          "CBLoL"
+        ],
+        "region": "Brazil"
+      },
+      "First Stand": {
+        "aliases": [
+          "FST",
+          "First Stand",
+          "First Stand Tournament"
+        ],
+        "region": null
+      },
+      "MSI": {
+        "aliases": [
+          "MSI"
+        ],
+        "region": null
+      },
+      "EWC": {
+        "aliases": [
+          "EWC"
+        ],
+        "region": null,
+        "stage_windows": [
+          {
+            "stage": "qualifiers",
+            "start_utc": "2026-01-01T00:00:00Z",
+            "end_utc_exclusive": "2026-07-15T00:00:00Z"
+          },
+          {
+            "stage": "main_event",
+            "start_utc": "2026-07-15T00:00:00Z",
+            "end_utc_exclusive": "2026-07-20T00:00:00Z"
+          }
+        ],
+        "stage_note": "Date-based classification for this source; source playoffs flag alone does not define event stage. Other dates remain explicitly unclassified.",
+        "source": "https://ewc-web.prod.esf-systems.com/en/competitions/2026/league-of-legends"
+      }
+    },
+    "worlds_aliases": [
+      "WLDs",
+      "WCS",
+      "Worlds",
+      "World Championship",
+      "Worlds 2026",
+      "2026 World Championship"
+    ],
+    "scope_note": "Reviewed regional/international allowlist including EWC main event and qualifiers. Retain missing timed stats and lineup changes. Include the approved LCS/CBLOL 2027 promotion events played in 2026 as explicit exceptions, preserving source season. Unknown labels remain held for review. Presence does not prove complete coverage."
+  },
+  "errors": [],
+  "warnings": [
+    "Candidate and structurally valid counts are audit findings, not permission to train.",
+    "Observed lineup changes may reflect substitutions, aliases, or source errors. Incomplete lineups are not interpolated.",
+    "International region mapping is retrospective for this audit only; it must not be copied into historical features."
+  ],
+  "training_readiness": "not_established",
+  "schema": {
+    "columns": [
+      "gameid",
+      "datacompleteness",
+      "url",
+      "league",
+      "year",
+      "split",
+      "playoffs",
+      "date",
+      "game",
+      "patch",
+      "participantid",
+      "side",
+      "position",
+      "playername",
+      "playerid",
+      "teamname",
+      "teamid",
+      "firstPick",
+      "champion",
+      "ban1",
+      "ban2",
+      "ban3",
+      "ban4",
+      "ban5",
+      "pick1",
+      "pick2",
+      "pick3",
+      "pick4",
+      "pick5",
+      "gamelength",
+      "result",
+      "kills",
+      "deaths",
+      "assists",
+      "teamkills",
+      "teamdeaths",
+      "doublekills",
+      "triplekills",
+      "quadrakills",
+      "pentakills",
+      "firstblood",
+      "firstbloodkill",
+      "firstbloodassist",
+      "firstbloodvictim",
+      "team kpm",
+      "ckpm",
+      "firstdragon",
+      "dragons",
+      "opp_dragons",
+      "elementaldrakes",
+      "opp_elementaldrakes",
+      "infernals",
+      "mountains",
+      "clouds",
+      "oceans",
+      "chemtechs",
+      "hextechs",
+      "dragons (type unknown)",
+      "elders",
+      "opp_elders",
+      "firstherald",
+      "heralds",
+      "opp_heralds",
+      "void_grubs",
+      "opp_void_grubs",
+      "firstbaron",
+      "barons",
+      "opp_barons",
+      "atakhans",
+      "opp_atakhans",
+      "firsttower",
+      "towers",
+      "opp_towers",
+      "firstmidtower",
+      "firsttothreetowers",
+      "turretplates",
+      "opp_turretplates",
+      "inhibitors",
+      "opp_inhibitors",
+      "damagetochampions",
+      "dpm",
+      "damageshare",
+      "damagetakenperminute",
+      "damagemitigatedperminute",
+      "damagetotowers",
+      "wardsplaced",
+      "wpm",
+      "wardskilled",
+      "wcpm",
+      "controlwardsbought",
+      "visionscore",
+      "vspm",
+      "totalgold",
+      "earnedgold",
+      "earned gpm",
+      "earnedgoldshare",
+      "goldspent",
+      "gspd",
+      "gpr",
+      "total cs",
+      "minionkills",
+      "monsterkills",
+      "monsterkillsownjungle",
+      "monsterkillsenemyjungle",
+      "cspm",
+      "goldat10",
+      "xpat10",
+      "csat10",
+      "opp_goldat10",
+      "opp_xpat10",
+      "opp_csat10",
+      "golddiffat10",
+      "xpdiffat10",
+      "csdiffat10",
+      "killsat10",
+      "assistsat10",
+      "deathsat10",
+      "opp_killsat10",
+      "opp_assistsat10",
+      "opp_deathsat10",
+      "goldat15",
+      "xpat15",
+      "csat15",
+      "opp_goldat15",
+      "opp_xpat15",
+      "opp_csat15",
+      "golddiffat15",
+      "xpdiffat15",
+      "csdiffat15",
+      "killsat15",
+      "assistsat15",
+      "deathsat15",
+      "opp_killsat15",
+      "opp_assistsat15",
+      "opp_deathsat15",
+      "goldat20",
+      "xpat20",
+      "csat20",
+      "opp_goldat20",
+      "opp_xpat20",
+      "opp_csat20",
+      "golddiffat20",
+      "xpdiffat20",
+      "csdiffat20",
+      "killsat20",
+      "assistsat20",
+      "deathsat20",
+      "opp_killsat20",
+      "opp_assistsat20",
+      "opp_deathsat20",
+      "goldat25",
+      "xpat25",
+      "csat25",
+      "opp_goldat25",
+      "opp_xpat25",
+      "opp_csat25",
+      "golddiffat25",
+      "xpdiffat25",
+      "csdiffat25",
+      "killsat25",
+      "assistsat25",
+      "deathsat25",
+      "opp_killsat25",
+      "opp_assistsat25",
+      "opp_deathsat25"
+    ],
+    "mapping": {
+      "game_id": "gameid",
+      "league": "league",
+      "year": "year",
+      "date": "date",
+      "position": "position",
+      "side": "side",
+      "result": "result",
+      "team_name": "teamname",
+      "team_id": "teamid",
+      "player_id": "playerid",
+      "player_name": "playername",
+      "patch": "patch",
+      "split": "split",
+      "playoffs": "playoffs",
+      "game_number": "game",
+      "series_id": null,
+      "completeness": "datacompleteness",
+      "gold_diff_15": "golddiffat15",
+      "xp_diff_15": "xpdiffat15",
+      "kills": "kills",
+      "duration": "gamelength",
+      "champion": "champion"
+    }
+  },
+  "rows": {
+    "total": 116664
+  },
+  "row_issues": {},
+  "malformed_line_examples": [],
+  "game_key": [
+    "league",
+    "gameid"
+  ],
+  "source_games": 9722,
+  "exclusions": {
+    "unreviewed_competition": 6923,
+    "worlds": 27
+  },
+  "observed_league_labels": {
+    "AC": 19,
+    "AL": 350,
+    "AM": 63,
+    "CBLOL": 299,
+    "CCWS": 40,
+    "CD": 258,
+    "DCGI": 71,
+    "DCup": 3,
+    "EBL": 213,
+    "EM": 519,
+    "EWC": 232,
+    "FST": 45,
+    "HC": 201,
+    "HLL": 235,
+    "HM": 174,
+    "HW": 103,
+    "KeSPA Cup": 61,
+    "LAS": 486,
+    "LCK": 502,
+    "LCKC": 491,
+    "LCP": 283,
+    "LCS": 283,
+    "LEC": 383,
+    "LES": 208,
+    "LFL": 275,
+    "LIT": 280,
+    "LJL": 363,
+    "LPL": 674,
+    "LPLOL": 162,
+    "LRN": 176,
+    "LRS": 187,
+    "MSI": 71,
+    "NACL": 281,
+    "NL": 149,
+    "NLC": 210,
+    "PCS": 86,
+    "PRM": 322,
+    "RL": 211,
+    "ROL": 261,
+    "TCL": 219,
+    "VCS": 155,
+    "WLDs": 27,
+    "WLRQ": 6,
+    "WSCI": 85
+  },
+  "coverage": {
+    "LCK": {
+      "observed_games": 502,
+      "candidate_games": 502,
+      "structurally_valid_games": 502,
+      "first_candidate_date": "2026-01-14T08:13:43+00:00",
+      "last_candidate_date": "2026-09-13T08:19:05+00:00"
+    },
+    "LPL": {
+      "observed_games": 674,
+      "candidate_games": 674,
+      "structurally_valid_games": 674,
+      "first_candidate_date": "2026-01-14T09:13:04+00:00",
+      "last_candidate_date": "2026-09-13T12:03:56+00:00"
+    },
+    "LEC": {
+      "observed_games": 383,
+      "candidate_games": 383,
+      "structurally_valid_games": 383,
+      "first_candidate_date": "2026-01-17T16:08:02+00:00",
+      "last_candidate_date": "2026-09-20T17:13:10+00:00"
+    },
+    "LCS": {
+      "observed_games": 283,
+      "candidate_games": 283,
+      "structurally_valid_games": 283,
+      "first_candidate_date": "2026-01-24T21:24:34+00:00",
+      "last_candidate_date": "2026-10-13T00:26:18+00:00"
+    },
+    "LCP": {
+      "observed_games": 283,
+      "candidate_games": 283,
+      "structurally_valid_games": 283,
+      "first_candidate_date": "2026-01-16T06:23:26+00:00",
+      "last_candidate_date": "2026-08-30T10:26:53+00:00"
+    },
+    "CBLOL": {
+      "observed_games": 299,
+      "candidate_games": 299,
+      "structurally_valid_games": 299,
+      "first_candidate_date": "2026-01-17T16:19:20+00:00",
+      "last_candidate_date": "2026-10-12T23:41:27+00:00"
+    },
+    "First Stand": {
+      "observed_games": 45,
+      "candidate_games": 45,
+      "structurally_valid_games": 45,
+      "first_candidate_date": "2026-03-16T13:10:29+00:00",
+      "last_candidate_date": "2026-03-22T16:04:39+00:00"
+    },
+    "MSI": {
+      "observed_games": 71,
+      "candidate_games": 71,
+      "structurally_valid_games": 71,
+      "first_candidate_date": "2026-06-28T03:10:49+00:00",
+      "last_candidate_date": "2026-07-12T11:11:20+00:00"
+    },
+    "EWC": {
+      "observed_games": 232,
+      "candidate_games": 232,
+      "structurally_valid_games": 232,
+      "first_candidate_date": "2026-04-14T18:07:58+00:00",
+      "last_candidate_date": "2026-07-19T15:15:31+00:00"
+    }
+  },
+  "candidate_games": 2772,
+  "structurally_valid_games": 2772,
+  "season_exceptions_included": {
+    "CBLOL_2027_promotion_played_2026": 24,
+    "LCS_2027_promotion_played_2026": 23
+  },
+  "event_stage_game_counts": [
+    {
+      "league": "CBLOL",
+      "stage": "promotion",
+      "source_season": 2027,
+      "games": 24
+    },
+    {
+      "league": "CBLOL",
+      "stage": "regional_competition",
+      "source_season": 2026,
+      "games": 275
+    },
+    {
+      "league": "EWC",
+      "stage": "main_event",
+      "source_season": 2026,
+      "games": 51
+    },
+    {
+      "league": "EWC",
+      "stage": "qualifiers",
+      "source_season": 2026,
+      "games": 181
+    },
+    {
+      "league": "First Stand",
+      "stage": "main_event",
+      "source_season": 2026,
+      "games": 45
+    },
+    {
+      "league": "LCK",
+      "stage": "regional_competition",
+      "source_season": 2026,
+      "games": 502
+    },
+    {
+      "league": "LCP",
+      "stage": "regional_competition",
+      "source_season": 2026,
+      "games": 283
+    },
+    {
+      "league": "LCS",
+      "stage": "promotion",
+      "source_season": 2027,
+      "games": 23
+    },
+    {
+      "league": "LCS",
+      "stage": "regional_competition",
+      "source_season": 2026,
+      "games": 260
+    },
+    {
+      "league": "LEC",
+      "stage": "regional_competition",
+      "source_season": 2026,
+      "games": 383
+    },
+    {
+      "league": "LPL",
+      "stage": "regional_competition",
+      "source_season": 2026,
+      "games": 674
+    },
+    {
+      "league": "MSI",
+      "stage": "main_event",
+      "source_season": 2026,
+      "games": 71
+    }
+  ],
+  "source_competition_inventory": [
+    {
+      "league": "AC",
+      "year": "2026",
+      "split": "",
+      "playoffs": "0",
+      "games": 19,
+      "first_date": "2026-03-04T21:12:25+00:00",
+      "last_date": "2026-03-08T20:51:01+00:00"
+    },
+    {
+      "league": "AL",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "0",
+      "games": 106,
+      "first_date": "2026-03-29T16:09:01+00:00",
+      "last_date": "2026-05-08T20:14:54+00:00"
+    },
+    {
+      "league": "AL",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "1",
+      "games": 16,
+      "first_date": "2026-05-12T16:18:27+00:00",
+      "last_date": "2026-05-21T17:49:20+00:00"
+    },
+    {
+      "league": "AL",
+      "year": "2026",
+      "split": "Summer",
+      "playoffs": "0",
+      "games": 80,
+      "first_date": "2026-06-02T16:08:03+00:00",
+      "last_date": "2026-08-12T18:07:56+00:00"
+    },
+    {
+      "league": "AL",
+      "year": "2026",
+      "split": "Summer",
+      "playoffs": "1",
+      "games": 34,
+      "first_date": "2026-08-19T16:10:15+00:00",
+      "last_date": "2026-09-17T19:40:00+00:00"
+    },
+    {
+      "league": "AL",
+      "year": "2026",
+      "split": "Winter",
+      "playoffs": "0",
+      "games": 91,
+      "first_date": "2026-01-13T16:07:20+00:00",
+      "last_date": "2026-02-13T18:13:40+00:00"
+    },
+    {
+      "league": "AL",
+      "year": "2026",
+      "split": "Winter",
+      "playoffs": "1",
+      "games": 23,
+      "first_date": "2026-02-18T19:03:05+00:00",
+      "last_date": "2026-02-26T21:21:02+00:00"
+    },
+    {
+      "league": "AM",
+      "year": "2026",
+      "split": "",
+      "playoffs": "0",
+      "games": 63,
+      "first_date": "2026-06-05T04:13:49+00:00",
+      "last_date": "2026-06-21T11:38:09+00:00"
+    },
+    {
+      "league": "CBLOL",
+      "year": "2026",
+      "split": "Cup",
+      "playoffs": "0",
+      "games": 68,
+      "first_date": "2026-01-17T16:19:20+00:00",
+      "last_date": "2026-03-01T18:04:57+00:00"
+    },
+    {
+      "league": "CBLOL",
+      "year": "2026",
+      "split": "Split 1",
+      "playoffs": "0",
+      "games": 66,
+      "first_date": "2026-03-28T16:14:08+00:00",
+      "last_date": "2026-05-03T19:41:41+00:00"
+    },
+    {
+      "league": "CBLOL",
+      "year": "2026",
+      "split": "Split 1",
+      "playoffs": "1",
+      "games": 39,
+      "first_date": "2026-05-09T16:15:58+00:00",
+      "last_date": "2026-06-06T18:50:05+00:00"
+    },
+    {
+      "league": "CBLOL",
+      "year": "2026",
+      "split": "Split 2",
+      "playoffs": "0",
+      "games": 62,
+      "first_date": "2026-07-25T17:38:54+00:00",
+      "last_date": "2026-08-30T20:07:25+00:00"
+    },
+    {
+      "league": "CBLOL",
+      "year": "2026",
+      "split": "Split 2",
+      "playoffs": "1",
+      "games": 40,
+      "first_date": "2026-09-05T16:12:38+00:00",
+      "last_date": "2026-10-10T20:22:04+00:00"
+    },
+    {
+      "league": "CBLOL",
+      "year": "2027",
+      "split": "",
+      "playoffs": "0",
+      "games": 24,
+      "first_date": "2026-09-28T21:04:54+00:00",
+      "last_date": "2026-10-12T23:41:27+00:00"
+    },
+    {
+      "league": "CCWS",
+      "year": "2026",
+      "split": "",
+      "playoffs": "0",
+      "games": 40,
+      "first_date": "2026-01-20T16:07:53+00:00",
+      "last_date": "2026-02-05T20:20:41+00:00"
+    },
+    {
+      "league": "CD",
+      "year": "2026",
+      "split": "",
+      "playoffs": "0",
+      "games": 70,
+      "first_date": "2026-02-27T21:12:07+00:00",
+      "last_date": "2026-06-09T22:58:39+00:00"
+    },
+    {
+      "league": "CD",
+      "year": "2026",
+      "split": "Split 1",
+      "playoffs": "0",
+      "games": 53,
+      "first_date": "2026-03-30T20:13:25+00:00",
+      "last_date": "2026-04-28T22:36:40+00:00"
+    },
+    {
+      "league": "CD",
+      "year": "2026",
+      "split": "Split 1",
+      "playoffs": "1",
+      "games": 41,
+      "first_date": "2026-05-04T20:04:45+00:00",
+      "last_date": "2026-06-01T23:58:41+00:00"
+    },
+    {
+      "league": "CD",
+      "year": "2026",
+      "split": "Split 2",
+      "playoffs": "0",
+      "games": 52,
+      "first_date": "2026-07-20T20:05:11+00:00",
+      "last_date": "2026-08-12T21:41:50+00:00"
+    },
+    {
+      "league": "CD",
+      "year": "2026",
+      "split": "Split 2",
+      "playoffs": "1",
+      "games": 42,
+      "first_date": "2026-08-17T20:04:54+00:00",
+      "last_date": "2026-09-14T21:53:27+00:00"
+    },
+    {
+      "league": "DCGI",
+      "year": "2026",
+      "split": "",
+      "playoffs": "0",
+      "games": 71,
+      "first_date": "2026-10-03T08:07:22+00:00",
+      "last_date": "2026-10-17T11:38:16+00:00"
+    },
+    {
+      "league": "DCup",
+      "year": "2025",
+      "split": "Season",
+      "playoffs": "0",
+      "games": 3,
+      "first_date": "2026-01-01T09:14:49+00:00",
+      "last_date": "2026-01-03T09:05:31+00:00"
+    },
+    {
+      "league": "EBL",
+      "year": "2026",
+      "split": "Finals",
+      "playoffs": "1",
+      "games": 17,
+      "first_date": "2026-09-07T16:05:08+00:00",
+      "last_date": "2026-09-10T19:21:16+00:00"
+    },
+    {
+      "league": "EBL",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "0",
+      "games": 31,
+      "first_date": "2026-04-15T16:08:23+00:00",
+      "last_date": "2026-04-30T16:52:55+00:00"
+    },
+    {
+      "league": "EBL",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "1",
+      "games": 35,
+      "first_date": "2026-05-06T16:14:21+00:00",
+      "last_date": "2026-05-28T17:38:58+00:00"
+    },
+    {
+      "league": "EBL",
+      "year": "2026",
+      "split": "Summer",
+      "playoffs": "0",
+      "games": 39,
+      "first_date": "2026-07-28T16:03:17+00:00",
+      "last_date": "2026-08-13T21:20:40+00:00"
+    },
+    {
+      "league": "EBL",
+      "year": "2026",
+      "split": "Summer",
+      "playoffs": "1",
+      "games": 20,
+      "first_date": "2026-08-19T16:08:09+00:00",
+      "last_date": "2026-08-27T17:50:58+00:00"
+    },
+    {
+      "league": "EBL",
+      "year": "2026",
+      "split": "Winter",
+      "playoffs": "0",
+      "games": 33,
+      "first_date": "2026-01-28T18:13:32+00:00",
+      "last_date": "2026-02-13T18:54:36+00:00"
+    },
+    {
+      "league": "EBL",
+      "year": "2026",
+      "split": "Winter",
+      "playoffs": "1",
+      "games": 33,
+      "first_date": "2026-02-18T17:15:50+00:00",
+      "last_date": "2026-03-06T18:41:42+00:00"
+    },
+    {
+      "league": "EBL",
+      "year": "2027",
+      "split": "",
+      "playoffs": "0",
+      "games": 5,
+      "first_date": "2026-09-02T16:19:53+00:00",
+      "last_date": "2026-09-02T19:36:32+00:00"
+    },
+    {
+      "league": "EM",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "0",
+      "games": 110,
+      "first_date": "2026-06-08T15:03:51+00:00",
+      "last_date": "2026-06-15T16:40:42+00:00"
+    },
+    {
+      "league": "EM",
+      "year": "2026",
+      "split": "Summer",
+      "playoffs": "0",
+      "games": 235,
+      "first_date": "2026-09-21T15:01:50+00:00",
+      "last_date": "2026-10-14T18:23:21+00:00"
+    },
+    {
+      "league": "EM",
+      "year": "2026",
+      "split": "Winter",
+      "playoffs": "0",
+      "games": 174,
+      "first_date": "2026-03-09T16:04:43+00:00",
+      "last_date": "2026-04-21T16:39:34+00:00"
+    },
+    {
+      "league": "EWC",
+      "year": "2026",
+      "split": "",
+      "playoffs": "0",
+      "games": 181,
+      "first_date": "2026-04-14T18:07:58+00:00",
+      "last_date": "2026-06-14T18:09:05+00:00"
+    },
+    {
+      "league": "EWC",
+      "year": "2026",
+      "split": "",
+      "playoffs": "1",
+      "games": 51,
+      "first_date": "2026-07-15T09:41:28+00:00",
+      "last_date": "2026-07-19T15:15:31+00:00"
+    },
+    {
+      "league": "FST",
+      "year": "2026",
+      "split": "",
+      "playoffs": "0",
+      "games": 45,
+      "first_date": "2026-03-16T13:10:29+00:00",
+      "last_date": "2026-03-22T16:04:39+00:00"
+    },
+    {
+      "league": "HC",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "0",
+      "games": 67,
+      "first_date": "2026-04-22T15:37:53+00:00",
+      "last_date": "2026-05-15T19:47:13+00:00"
+    },
+    {
+      "league": "HC",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "1",
+      "games": 32,
+      "first_date": "2026-05-27T15:16:47+00:00",
+      "last_date": "2026-06-14T13:51:03+00:00"
+    },
+    {
+      "league": "HC",
+      "year": "2026",
+      "split": "Summer",
+      "playoffs": "0",
+      "games": 70,
+      "first_date": "2026-09-06T14:12:53+00:00",
+      "last_date": "2026-09-21T18:44:21+00:00"
+    },
+    {
+      "league": "HC",
+      "year": "2026",
+      "split": "Summer",
+      "playoffs": "1",
+      "games": 32,
+      "first_date": "2026-09-25T15:17:06+00:00",
+      "last_date": "2026-10-11T13:11:46+00:00"
+    },
+    {
+      "league": "HLL",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "0",
+      "games": 69,
+      "first_date": "2026-03-31T13:29:09+00:00",
+      "last_date": "2026-05-19T17:05:18+00:00"
+    },
+    {
+      "league": "HLL",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "1",
+      "games": 13,
+      "first_date": "2026-05-13T13:13:05+00:00",
+      "last_date": "2026-05-23T12:23:08+00:00"
+    },
+    {
+      "league": "HLL",
+      "year": "2026",
+      "split": "Summer",
+      "playoffs": "0",
+      "games": 54,
+      "first_date": "2026-06-30T13:12:46+00:00",
+      "last_date": "2026-08-05T16:16:32+00:00"
+    },
+    {
+      "league": "HLL",
+      "year": "2026",
+      "split": "Summer",
+      "playoffs": "1",
+      "games": 28,
+      "first_date": "2026-08-25T13:10:51+00:00",
+      "last_date": "2026-09-12T19:07:32+00:00"
+    },
+    {
+      "league": "HLL",
+      "year": "2026",
+      "split": "Winter",
+      "playoffs": "0",
+      "games": 59,
+      "first_date": "2026-01-14T16:19:48+00:00",
+      "last_date": "2026-02-24T19:17:42+00:00"
+    },
+    {
+      "league": "HLL",
+      "year": "2026",
+      "split": "Winter",
+      "playoffs": "1",
+      "games": 12,
+      "first_date": "2026-02-25T16:13:26+00:00",
+      "last_date": "2026-02-28T14:22:19+00:00"
+    },
+    {
+      "league": "HM",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "0",
+      "games": 61,
+      "first_date": "2026-04-16T14:12:29+00:00",
+      "last_date": "2026-05-17T16:15:18+00:00"
+    },
+    {
+      "league": "HM",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "1",
+      "games": 27,
+      "first_date": "2026-05-23T10:20:15+00:00",
+      "last_date": "2026-06-05T16:09:13+00:00"
+    },
+    {
+      "league": "HM",
+      "year": "2026",
+      "split": "Summer",
+      "playoffs": "0",
+      "games": 58,
+      "first_date": "2026-08-11T14:16:43+00:00",
+      "last_date": "2026-09-06T13:09:32+00:00"
+    },
+    {
+      "league": "HM",
+      "year": "2026",
+      "split": "Summer",
+      "playoffs": "1",
+      "games": 28,
+      "first_date": "2026-09-08T14:16:16+00:00",
+      "last_date": "2026-09-20T13:24:06+00:00"
+    },
+    {
+      "league": "HW",
+      "year": "2026",
+      "split": "",
+      "playoffs": "0",
+      "games": 103,
+      "first_date": "2026-01-22T16:11:44+00:00",
+      "last_date": "2026-03-07T17:12:29+00:00"
+    },
+    {
+      "league": "KeSPA Cup",
+      "year": "2026",
+      "split": "",
+      "playoffs": "0",
+      "games": 61,
+      "first_date": "2026-07-20T06:16:43+00:00",
+      "last_date": "2026-08-18T11:06:51+00:00"
+    },
+    {
+      "league": "LAS",
+      "year": "2026",
+      "split": "Champ 1",
+      "playoffs": "0",
+      "games": 199,
+      "first_date": "2026-03-21T05:05:02+00:00",
+      "last_date": "2026-05-03T05:57:09+00:00"
+    },
+    {
+      "league": "LAS",
+      "year": "2026",
+      "split": "Champ 1",
+      "playoffs": "1",
+      "games": 30,
+      "first_date": "2026-05-09T05:13:14+00:00",
+      "last_date": "2026-05-17T11:40:58+00:00"
+    },
+    {
+      "league": "LAS",
+      "year": "2026",
+      "split": "Champ 2",
+      "playoffs": "0",
+      "games": 257,
+      "first_date": "2026-09-12T05:06:48+00:00",
+      "last_date": "2026-10-17T09:29:35+00:00"
+    },
+    {
+      "league": "LCK",
+      "year": "2026",
+      "split": "Cup",
+      "playoffs": "0",
+      "games": 125,
+      "first_date": "2026-01-14T08:13:43+00:00",
+      "last_date": "2026-03-01T10:01:17+00:00"
+    },
+    {
+      "league": "LCK",
+      "year": "2026",
+      "split": "Rounds 1-2",
+      "playoffs": "0",
+      "games": 204,
+      "first_date": "2026-04-01T08:11:43+00:00",
+      "last_date": "2026-05-31T11:10:18+00:00"
+    },
+    {
+      "league": "LCK",
+      "year": "2026",
+      "split": "Rounds 1-2",
+      "playoffs": "1",
+      "games": 20,
+      "first_date": "2026-06-06T08:12:31+00:00",
+      "last_date": "2026-06-14T10:35:36+00:00"
+    },
+    {
+      "league": "LCK",
+      "year": "2026",
+      "split": "Rounds 3-4",
+      "playoffs": "0",
+      "games": 98,
+      "first_date": "2026-07-29T08:05:41+00:00",
+      "last_date": "2026-08-23T11:57:33+00:00"
+    },
+    {
+      "league": "LCK",
+      "year": "2026",
+      "split": "Rounds 3-4",
+      "playoffs": "1",
+      "games": 55,
+      "first_date": "2026-08-26T08:08:21+00:00",
+      "last_date": "2026-09-13T08:19:05+00:00"
+    },
+    {
+      "league": "LCKC",
+      "year": "2026",
+      "split": "Kickoff",
+      "playoffs": "0",
+      "games": 117,
+      "first_date": "2026-01-12T05:10:10+00:00",
+      "last_date": "2026-03-03T10:52:23+00:00"
+    },
+    {
+      "league": "LCKC",
+      "year": "2026",
+      "split": "Rounds 1-2",
+      "playoffs": "0",
+      "games": 221,
+      "first_date": "2026-03-30T05:06:19+00:00",
+      "last_date": "2026-05-29T06:02:54+00:00"
+    },
+    {
+      "league": "LCKC",
+      "year": "2026",
+      "split": "Rounds 3-4",
+      "playoffs": "0",
+      "games": 102,
+      "first_date": "2026-07-27T08:07:39+00:00",
+      "last_date": "2026-08-21T06:42:09+00:00"
+    },
+    {
+      "league": "LCKC",
+      "year": "2026",
+      "split": "Rounds 3-4",
+      "playoffs": "1",
+      "games": 51,
+      "first_date": "2026-08-24T05:14:01+00:00",
+      "last_date": "2026-09-15T09:47:51+00:00"
+    },
+    {
+      "league": "LCP",
+      "year": "2026",
+      "split": "Split 1",
+      "playoffs": "0",
+      "games": 70,
+      "first_date": "2026-01-16T06:23:26+00:00",
+      "last_date": "2026-02-08T10:25:21+00:00"
+    },
+    {
+      "league": "LCP",
+      "year": "2026",
+      "split": "Split 1",
+      "playoffs": "1",
+      "games": 32,
+      "first_date": "2026-02-12T06:11:43+00:00",
+      "last_date": "2026-03-01T07:57:07+00:00"
+    },
+    {
+      "league": "LCP",
+      "year": "2026",
+      "split": "Split 2",
+      "playoffs": "0",
+      "games": 69,
+      "first_date": "2026-04-04T09:17:19+00:00",
+      "last_date": "2026-05-17T13:56:03+00:00"
+    },
+    {
+      "league": "LCP",
+      "year": "2026",
+      "split": "Split 2",
+      "playoffs": "1",
+      "games": 32,
+      "first_date": "2026-05-23T09:13:26+00:00",
+      "last_date": "2026-06-07T11:47:24+00:00"
+    },
+    {
+      "league": "LCP",
+      "year": "2026",
+      "split": "Split 3",
+      "playoffs": "0",
+      "games": 80,
+      "first_date": "2026-07-25T09:18:53+00:00",
+      "last_date": "2026-08-30T10:26:53+00:00"
+    },
+    {
+      "league": "LCS",
+      "year": "2026",
+      "split": "Lock-In",
+      "playoffs": "0",
+      "games": 59,
+      "first_date": "2026-01-24T21:24:34+00:00",
+      "last_date": "2026-03-02T00:22:41+00:00"
+    },
+    {
+      "league": "LCS",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "0",
+      "games": 69,
+      "first_date": "2026-04-04T20:17:46+00:00",
+      "last_date": "2026-05-17T23:43:46+00:00"
+    },
+    {
+      "league": "LCS",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "1",
+      "games": 29,
+      "first_date": "2026-05-23T20:10:31+00:00",
+      "last_date": "2026-06-14T22:24:48+00:00"
+    },
+    {
+      "league": "LCS",
+      "year": "2026",
+      "split": "Summer",
+      "playoffs": "0",
+      "games": 64,
+      "first_date": "2026-07-25T20:13:30+00:00",
+      "last_date": "2026-09-06T22:34:24+00:00"
+    },
+    {
+      "league": "LCS",
+      "year": "2026",
+      "split": "Summer",
+      "playoffs": "1",
+      "games": 39,
+      "first_date": "2026-09-12T20:11:17+00:00",
+      "last_date": "2026-10-04T23:31:20+00:00"
+    },
+    {
+      "league": "LCS",
+      "year": "2027",
+      "split": "",
+      "playoffs": "0",
+      "games": 23,
+      "first_date": "2026-10-05T21:10:42+00:00",
+      "last_date": "2026-10-13T00:26:18+00:00"
+    },
+    {
+      "league": "LEC",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "0",
+      "games": 111,
+      "first_date": "2026-03-28T13:10:54+00:00",
+      "last_date": "2026-05-10T18:37:55+00:00"
+    },
+    {
+      "league": "LEC",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "1",
+      "games": 30,
+      "first_date": "2026-05-23T15:11:03+00:00",
+      "last_date": "2026-06-07T18:59:23+00:00"
+    },
+    {
+      "league": "LEC",
+      "year": "2026",
+      "split": "Summer",
+      "playoffs": "0",
+      "games": 106,
+      "first_date": "2026-07-24T14:46:02+00:00",
+      "last_date": "2026-08-30T17:34:38+00:00"
+    },
+    {
+      "league": "LEC",
+      "year": "2026",
+      "split": "Summer",
+      "playoffs": "1",
+      "games": 31,
+      "first_date": "2026-09-05T10:19:57+00:00",
+      "last_date": "2026-09-20T17:13:10+00:00"
+    },
+    {
+      "league": "LEC",
+      "year": "2026",
+      "split": "Versus",
+      "playoffs": "0",
+      "games": 66,
+      "first_date": "2026-01-17T16:08:02+00:00",
+      "last_date": "2026-02-08T20:26:52+00:00"
+    },
+    {
+      "league": "LEC",
+      "year": "2026",
+      "split": "Versus",
+      "playoffs": "1",
+      "games": 39,
+      "first_date": "2026-02-16T15:58:59+00:00",
+      "last_date": "2026-03-01T20:19:40+00:00"
+    },
+    {
+      "league": "LES",
+      "year": "2026",
+      "split": "Final Four",
+      "playoffs": "1",
+      "games": 12,
+      "first_date": "2026-09-01T15:16:21+00:00",
+      "last_date": "2026-09-06T13:45:27+00:00"
+    },
+    {
+      "league": "LES",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "0",
+      "games": 63,
+      "first_date": "2026-04-08T15:15:39+00:00",
+      "last_date": "2026-05-21T18:43:45+00:00"
+    },
+    {
+      "league": "LES",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "1",
+      "games": 16,
+      "first_date": "2026-06-03T15:11:12+00:00",
+      "last_date": "2026-06-05T18:44:02+00:00"
+    },
+    {
+      "league": "LES",
+      "year": "2026",
+      "split": "Summer",
+      "playoffs": "0",
+      "games": 63,
+      "first_date": "2026-07-14T15:10:25+00:00",
+      "last_date": "2026-08-13T18:59:21+00:00"
+    },
+    {
+      "league": "LES",
+      "year": "2026",
+      "split": "Summer",
+      "playoffs": "1",
+      "games": 14,
+      "first_date": "2026-08-18T15:18:50+00:00",
+      "last_date": "2026-08-20T19:21:06+00:00"
+    },
+    {
+      "league": "LES",
+      "year": "2026",
+      "split": "Winter",
+      "playoffs": "0",
+      "games": 25,
+      "first_date": "2026-02-13T11:23:25+00:00",
+      "last_date": "2026-02-15T17:46:22+00:00"
+    },
+    {
+      "league": "LES",
+      "year": "2027",
+      "split": "",
+      "playoffs": "0",
+      "games": 15,
+      "first_date": "2026-09-23T15:12:07+00:00",
+      "last_date": "2026-09-25T18:30:29+00:00"
+    },
+    {
+      "league": "LFL",
+      "year": "2026",
+      "split": "",
+      "playoffs": "0",
+      "games": 187,
+      "first_date": "2026-01-21T17:06:38+00:00",
+      "last_date": "2026-08-06T19:55:40+00:00"
+    },
+    {
+      "league": "LFL",
+      "year": "2026",
+      "split": "",
+      "playoffs": "1",
+      "games": 74,
+      "first_date": "2026-05-06T16:06:24+00:00",
+      "last_date": "2026-09-02T18:50:02+00:00"
+    },
+    {
+      "league": "LFL",
+      "year": "2027",
+      "split": "",
+      "playoffs": "0",
+      "games": 14,
+      "first_date": "2026-09-09T16:08:07+00:00",
+      "last_date": "2026-09-16T17:44:09+00:00"
+    },
+    {
+      "league": "LIT",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "0",
+      "games": 60,
+      "first_date": "2026-04-01T16:06:03+00:00",
+      "last_date": "2026-05-24T19:04:11+00:00"
+    },
+    {
+      "league": "LIT",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "1",
+      "games": 34,
+      "first_date": "2026-04-22T16:51:47+00:00",
+      "last_date": "2026-05-29T18:00:44+00:00"
+    },
+    {
+      "league": "LIT",
+      "year": "2026",
+      "split": "Summer",
+      "playoffs": "0",
+      "games": 28,
+      "first_date": "2026-07-22T16:05:12+00:00",
+      "last_date": "2026-08-07T19:28:26+00:00"
+    },
+    {
+      "league": "LIT",
+      "year": "2026",
+      "split": "Summer",
+      "playoffs": "1",
+      "games": 34,
+      "first_date": "2026-08-19T16:06:32+00:00",
+      "last_date": "2026-09-19T18:14:19+00:00"
+    },
+    {
+      "league": "LIT",
+      "year": "2026",
+      "split": "Winter",
+      "playoffs": "0",
+      "games": 58,
+      "first_date": "2026-01-08T17:08:27+00:00",
+      "last_date": "2026-02-21T19:17:04+00:00"
+    },
+    {
+      "league": "LIT",
+      "year": "2026",
+      "split": "Winter",
+      "playoffs": "1",
+      "games": 38,
+      "first_date": "2026-01-28T17:12:42+00:00",
+      "last_date": "2026-03-06T19:02:29+00:00"
+    },
+    {
+      "league": "LIT",
+      "year": "2027",
+      "split": "Winter",
+      "playoffs": "0",
+      "games": 28,
+      "first_date": "2026-08-28T17:14:43+00:00",
+      "last_date": "2026-09-13T18:59:24+00:00"
+    },
+    {
+      "league": "LJL",
+      "year": "2026",
+      "split": "",
+      "playoffs": "0",
+      "games": 184,
+      "first_date": "2026-01-31T01:38:58+00:00",
+      "last_date": "2026-04-19T07:18:31+00:00"
+    },
+    {
+      "league": "LJL",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "1",
+      "games": 78,
+      "first_date": "2026-04-29T08:09:27+00:00",
+      "last_date": "2026-06-14T11:51:25+00:00"
+    },
+    {
+      "league": "LJL",
+      "year": "2026",
+      "split": "Summer",
+      "playoffs": "1",
+      "games": 37,
+      "first_date": "2026-07-17T08:09:33+00:00",
+      "last_date": "2026-09-06T09:52:19+00:00"
+    },
+    {
+      "league": "LJL",
+      "year": "2026",
+      "split": "Winter",
+      "playoffs": "1",
+      "games": 64,
+      "first_date": "2026-02-21T08:16:02+00:00",
+      "last_date": "2026-03-29T10:09:45+00:00"
+    },
+    {
+      "league": "LPL",
+      "year": "2026",
+      "split": "Split 1",
+      "playoffs": "0",
+      "games": 137,
+      "first_date": "2026-01-14T09:13:04+00:00",
+      "last_date": "2026-02-07T12:12:44+00:00"
+    },
+    {
+      "league": "LPL",
+      "year": "2026",
+      "split": "Split 1",
+      "playoffs": "1",
+      "games": 77,
+      "first_date": "2026-02-09T06:09:38+00:00",
+      "last_date": "2026-03-08T12:04:35+00:00"
+    },
+    {
+      "league": "LPL",
+      "year": "2026",
+      "split": "Split 2",
+      "playoffs": "0",
+      "games": 171,
+      "first_date": "2026-04-04T07:13:58+00:00",
+      "last_date": "2026-05-17T13:35:18+00:00"
+    },
+    {
+      "league": "LPL",
+      "year": "2026",
+      "split": "Split 2",
+      "playoffs": "1",
+      "games": 68,
+      "first_date": "2026-05-23T06:07:52+00:00",
+      "last_date": "2026-06-14T10:20:00+00:00"
+    },
+    {
+      "league": "LPL",
+      "year": "2026",
+      "split": "Split 3",
+      "playoffs": "0",
+      "games": 166,
+      "first_date": "2026-07-22T09:13:58+00:00",
+      "last_date": "2026-08-23T14:45:43+00:00"
+    },
+    {
+      "league": "LPL",
+      "year": "2026",
+      "split": "Split 3",
+      "playoffs": "1",
+      "games": 55,
+      "first_date": "2026-08-28T06:12:13+00:00",
+      "last_date": "2026-09-13T12:03:56+00:00"
+    },
+    {
+      "league": "LPLOL",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "0",
+      "games": 28,
+      "first_date": "2026-04-29T18:13:15+00:00",
+      "last_date": "2026-05-22T21:16:51+00:00"
+    },
+    {
+      "league": "LPLOL",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "1",
+      "games": 14,
+      "first_date": "2026-05-28T18:18:07+00:00",
+      "last_date": "2026-06-03T20:02:23+00:00"
+    },
+    {
+      "league": "LPLOL",
+      "year": "2026",
+      "split": "Summer",
+      "playoffs": "0",
+      "games": 81,
+      "first_date": "2026-07-22T18:13:40+00:00",
+      "last_date": "2026-09-13T20:32:52+00:00"
+    },
+    {
+      "league": "LPLOL",
+      "year": "2026",
+      "split": "Winter",
+      "playoffs": "0",
+      "games": 39,
+      "first_date": "2026-02-12T19:49:36+00:00",
+      "last_date": "2026-03-06T22:04:35+00:00"
+    },
+    {
+      "league": "LRN",
+      "year": "2026",
+      "split": "Split 1",
+      "playoffs": "0",
+      "games": 60,
+      "first_date": "2026-03-02T23:15:17+00:00",
+      "last_date": "2026-04-14T02:27:48+00:00"
+    },
+    {
+      "league": "LRN",
+      "year": "2026",
+      "split": "Split 1",
+      "playoffs": "1",
+      "games": 29,
+      "first_date": "2026-04-20T23:09:34+00:00",
+      "last_date": "2026-06-09T00:56:51+00:00"
+    },
+    {
+      "league": "LRN",
+      "year": "2026",
+      "split": "Split 2",
+      "playoffs": "0",
+      "games": 56,
+      "first_date": "2026-07-04T19:21:57+00:00",
+      "last_date": "2026-07-20T02:18:37+00:00"
+    },
+    {
+      "league": "LRN",
+      "year": "2026",
+      "split": "Split 2",
+      "playoffs": "1",
+      "games": 31,
+      "first_date": "2026-07-27T23:10:58+00:00",
+      "last_date": "2026-09-08T01:06:37+00:00"
+    },
+    {
+      "league": "LRS",
+      "year": "2026",
+      "split": "Split 1",
+      "playoffs": "0",
+      "games": 63,
+      "first_date": "2026-03-03T20:05:00+00:00",
+      "last_date": "2026-04-14T23:45:52+00:00"
+    },
+    {
+      "league": "LRS",
+      "year": "2026",
+      "split": "Split 1",
+      "playoffs": "1",
+      "games": 28,
+      "first_date": "2026-04-21T20:10:35+00:00",
+      "last_date": "2026-06-09T22:08:26+00:00"
+    },
+    {
+      "league": "LRS",
+      "year": "2026",
+      "split": "Split 2",
+      "playoffs": "0",
+      "games": 66,
+      "first_date": "2026-07-01T20:06:38+00:00",
+      "last_date": "2026-07-14T23:27:44+00:00"
+    },
+    {
+      "league": "LRS",
+      "year": "2026",
+      "split": "Split 2",
+      "playoffs": "1",
+      "games": 30,
+      "first_date": "2026-07-21T20:06:26+00:00",
+      "last_date": "2026-09-08T22:39:29+00:00"
+    },
+    {
+      "league": "MSI",
+      "year": "2026",
+      "split": "",
+      "playoffs": "0",
+      "games": 71,
+      "first_date": "2026-06-28T03:10:49+00:00",
+      "last_date": "2026-07-12T11:11:20+00:00"
+    },
+    {
+      "league": "NACL",
+      "year": "2026",
+      "split": "",
+      "playoffs": "0",
+      "games": 27,
+      "first_date": "2026-06-17T20:08:02+00:00",
+      "last_date": "2026-06-20T23:37:16+00:00"
+    },
+    {
+      "league": "NACL",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "0",
+      "games": 103,
+      "first_date": "2026-03-26T20:07:48+00:00",
+      "last_date": "2026-05-15T23:11:14+00:00"
+    },
+    {
+      "league": "NACL",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "1",
+      "games": 37,
+      "first_date": "2026-05-20T20:11:17+00:00",
+      "last_date": "2026-06-05T21:57:17+00:00"
+    },
+    {
+      "league": "NACL",
+      "year": "2026",
+      "split": "Summer",
+      "playoffs": "0",
+      "games": 67,
+      "first_date": "2026-07-16T21:09:36+00:00",
+      "last_date": "2026-08-15T01:55:37+00:00"
+    },
+    {
+      "league": "NACL",
+      "year": "2026",
+      "split": "Summer",
+      "playoffs": "1",
+      "games": 47,
+      "first_date": "2026-08-20T21:06:59+00:00",
+      "last_date": "2026-09-11T23:00:40+00:00"
+    },
+    {
+      "league": "NL",
+      "year": "2026",
+      "split": "",
+      "playoffs": "0",
+      "games": 101,
+      "first_date": "2026-04-11T10:06:16+00:00",
+      "last_date": "2026-08-15T13:43:36+00:00"
+    },
+    {
+      "league": "NL",
+      "year": "2026",
+      "split": "",
+      "playoffs": "1",
+      "games": 36,
+      "first_date": "2026-05-30T10:04:27+00:00",
+      "last_date": "2026-09-06T12:50:23+00:00"
+    },
+    {
+      "league": "NL",
+      "year": "2027",
+      "split": "",
+      "playoffs": "0",
+      "games": 12,
+      "first_date": "2026-09-22T17:21:47+00:00",
+      "last_date": "2026-09-25T18:59:08+00:00"
+    },
+    {
+      "league": "NLC",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "0",
+      "games": 29,
+      "first_date": "2026-05-25T17:04:07+00:00",
+      "last_date": "2026-05-27T20:13:06+00:00"
+    },
+    {
+      "league": "NLC",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "1",
+      "games": 18,
+      "first_date": "2026-05-29T16:04:14+00:00",
+      "last_date": "2026-06-05T17:51:04+00:00"
+    },
+    {
+      "league": "NLC",
+      "year": "2026",
+      "split": "Summer",
+      "playoffs": "0",
+      "games": 108,
+      "first_date": "2026-07-15T17:09:47+00:00",
+      "last_date": "2026-09-16T18:24:13+00:00"
+    },
+    {
+      "league": "NLC",
+      "year": "2026",
+      "split": "Winter",
+      "playoffs": "0",
+      "games": 43,
+      "first_date": "2026-01-15T17:23:54+00:00",
+      "last_date": "2026-02-26T21:09:55+00:00"
+    },
+    {
+      "league": "NLC",
+      "year": "2026",
+      "split": "Winter",
+      "playoffs": "1",
+      "games": 12,
+      "first_date": "2026-03-04T17:16:40+00:00",
+      "last_date": "2026-03-07T18:52:08+00:00"
+    },
+    {
+      "league": "PCS",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "0",
+      "games": 48,
+      "first_date": "2026-04-27T09:05:56+00:00",
+      "last_date": "2026-06-03T12:13:47+00:00"
+    },
+    {
+      "league": "PCS",
+      "year": "2026",
+      "split": "Summer",
+      "playoffs": "0",
+      "games": 38,
+      "first_date": "2026-08-03T09:04:09+00:00",
+      "last_date": "2026-09-06T12:11:55+00:00"
+    },
+    {
+      "league": "PRM",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "0",
+      "games": 91,
+      "first_date": "2026-04-01T15:17:36+00:00",
+      "last_date": "2026-05-12T18:54:48+00:00"
+    },
+    {
+      "league": "PRM",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "1",
+      "games": 58,
+      "first_date": "2026-05-20T15:09:53+00:00",
+      "last_date": "2026-09-12T16:43:41+00:00"
+    },
+    {
+      "league": "PRM",
+      "year": "2026",
+      "split": "Summer",
+      "playoffs": "0",
+      "games": 100,
+      "first_date": "2026-06-30T15:11:55+00:00",
+      "last_date": "2026-08-13T16:43:55+00:00"
+    },
+    {
+      "league": "PRM",
+      "year": "2026",
+      "split": "Winter",
+      "playoffs": "0",
+      "games": 51,
+      "first_date": "2026-02-11T17:07:36+00:00",
+      "last_date": "2026-03-07T19:55:24+00:00"
+    },
+    {
+      "league": "PRM",
+      "year": "2027",
+      "split": "",
+      "playoffs": "0",
+      "games": 22,
+      "first_date": "2026-09-07T16:05:25+00:00",
+      "last_date": "2026-09-17T19:37:49+00:00"
+    },
+    {
+      "league": "RL",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "0",
+      "games": 66,
+      "first_date": "2026-03-31T15:11:42+00:00",
+      "last_date": "2026-05-21T19:05:55+00:00"
+    },
+    {
+      "league": "RL",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "1",
+      "games": 15,
+      "first_date": "2026-05-26T15:13:33+00:00",
+      "last_date": "2026-05-31T18:25:15+00:00"
+    },
+    {
+      "league": "RL",
+      "year": "2026",
+      "split": "Summer",
+      "playoffs": "0",
+      "games": 79,
+      "first_date": "2026-08-04T15:15:31+00:00",
+      "last_date": "2026-09-19T12:12:23+00:00"
+    },
+    {
+      "league": "RL",
+      "year": "2026",
+      "split": "Winter",
+      "playoffs": "0",
+      "games": 51,
+      "first_date": "2026-02-14T10:10:00+00:00",
+      "last_date": "2026-03-07T19:22:00+00:00"
+    },
+    {
+      "league": "ROL",
+      "year": "2026",
+      "split": "",
+      "playoffs": "0",
+      "games": 4,
+      "first_date": "2026-06-11T16:07:16+00:00",
+      "last_date": "2026-06-11T18:51:49+00:00"
+    },
+    {
+      "league": "ROL",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "0",
+      "games": 66,
+      "first_date": "2026-03-31T17:06:16+00:00",
+      "last_date": "2026-05-14T20:18:11+00:00"
+    },
+    {
+      "league": "ROL",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "1",
+      "games": 25,
+      "first_date": "2026-05-19T16:06:20+00:00",
+      "last_date": "2026-06-06T17:49:48+00:00"
+    },
+    {
+      "league": "ROL",
+      "year": "2026",
+      "split": "Summer",
+      "playoffs": "0",
+      "games": 70,
+      "first_date": "2026-07-14T17:08:59+00:00",
+      "last_date": "2026-08-28T18:53:00+00:00"
+    },
+    {
+      "league": "ROL",
+      "year": "2026",
+      "split": "Summer",
+      "playoffs": "1",
+      "games": 23,
+      "first_date": "2026-09-01T16:24:55+00:00",
+      "last_date": "2026-09-17T17:48:01+00:00"
+    },
+    {
+      "league": "ROL",
+      "year": "2026",
+      "split": "Winter",
+      "playoffs": "0",
+      "games": 55,
+      "first_date": "2026-01-13T18:05:21+00:00",
+      "last_date": "2026-02-05T20:07:41+00:00"
+    },
+    {
+      "league": "ROL",
+      "year": "2026",
+      "split": "Winter",
+      "playoffs": "1",
+      "games": 14,
+      "first_date": "2026-02-10T17:05:40+00:00",
+      "last_date": "2026-02-19T18:45:42+00:00"
+    },
+    {
+      "league": "ROL",
+      "year": "2027",
+      "split": "",
+      "playoffs": "0",
+      "games": 4,
+      "first_date": "2026-10-08T17:09:52+00:00",
+      "last_date": "2026-10-08T20:02:13+00:00"
+    },
+    {
+      "league": "TCL",
+      "year": "2026",
+      "split": "Kickoff",
+      "playoffs": "0",
+      "games": 57,
+      "first_date": "2026-01-20T14:32:48+00:00",
+      "last_date": "2026-03-06T17:03:04+00:00"
+    },
+    {
+      "league": "TCL",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "0",
+      "games": 64,
+      "first_date": "2026-04-09T14:31:20+00:00",
+      "last_date": "2026-05-15T18:28:15+00:00"
+    },
+    {
+      "league": "TCL",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "1",
+      "games": 22,
+      "first_date": "2026-05-19T15:00:43+00:00",
+      "last_date": "2026-06-05T16:46:35+00:00"
+    },
+    {
+      "league": "TCL",
+      "year": "2026",
+      "split": "Summer",
+      "playoffs": "0",
+      "games": 65,
+      "first_date": "2026-07-29T14:32:44+00:00",
+      "last_date": "2026-09-11T16:46:13+00:00"
+    },
+    {
+      "league": "TCL",
+      "year": "2027",
+      "split": "",
+      "playoffs": "0",
+      "games": 11,
+      "first_date": "2026-10-10T14:10:28+00:00",
+      "last_date": "2026-10-11T15:58:23+00:00"
+    },
+    {
+      "league": "VCS",
+      "year": "2026",
+      "split": "Finals",
+      "playoffs": "0",
+      "games": 23,
+      "first_date": "2026-09-11T09:06:28+00:00",
+      "last_date": "2026-09-20T11:55:57+00:00"
+    },
+    {
+      "league": "VCS",
+      "year": "2026",
+      "split": "Finals",
+      "playoffs": "1",
+      "games": 19,
+      "first_date": "2026-09-24T09:04:44+00:00",
+      "last_date": "2026-10-11T12:15:18+00:00"
+    },
+    {
+      "league": "VCS",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "0",
+      "games": 32,
+      "first_date": "2026-02-28T10:24:30+00:00",
+      "last_date": "2026-03-15T10:52:45+00:00"
+    },
+    {
+      "league": "VCS",
+      "year": "2026",
+      "split": "Spring",
+      "playoffs": "1",
+      "games": 23,
+      "first_date": "2026-03-24T10:07:39+00:00",
+      "last_date": "2026-03-29T14:15:48+00:00"
+    },
+    {
+      "league": "VCS",
+      "year": "2026",
+      "split": "Summer",
+      "playoffs": "0",
+      "games": 34,
+      "first_date": "2026-05-13T10:10:11+00:00",
+      "last_date": "2026-05-28T11:03:37+00:00"
+    },
+    {
+      "league": "VCS",
+      "year": "2026",
+      "split": "Summer",
+      "playoffs": "1",
+      "games": 24,
+      "first_date": "2026-06-11T10:39:34+00:00",
+      "last_date": "2026-06-20T11:39:43+00:00"
+    },
+    {
+      "league": "WLDs",
+      "year": "2026",
+      "split": "",
+      "playoffs": "0",
+      "games": 27,
+      "first_date": "2026-09-17T09:11:42+00:00",
+      "last_date": "2026-10-16T23:43:16+00:00"
+    },
+    {
+      "league": "WLRQ",
+      "year": "2026",
+      "split": "",
+      "playoffs": "0",
+      "games": 6,
+      "first_date": "2026-08-25T06:12:47+00:00",
+      "last_date": "2026-08-27T10:54:13+00:00"
+    },
+    {
+      "league": "WSCI",
+      "year": "2026",
+      "split": "",
+      "playoffs": "0",
+      "games": 85,
+      "first_date": "2026-09-13T15:07:37+00:00",
+      "last_date": "2026-10-02T12:10:26+00:00"
+    }
+  ],
+  "games_without_both_numeric_team_values": {
+    "gold_diff_15": 133,
+    "xp_diff_15": 133
+  },
+  "missing_gold_15_game_breakdown": [
+    {
+      "league": "LEC",
+      "completeness": "complete",
+      "duration_band": "900_or_more_source_units_or_unknown",
+      "games": 1
+    },
+    {
+      "league": "LPL",
+      "completeness": "complete",
+      "duration_band": "900_or_more_source_units_or_unknown",
+      "games": 12
+    },
+    {
+      "league": "LPL",
+      "completeness": "partial",
+      "duration_band": "900_or_more_source_units_or_unknown",
+      "games": 120
+    }
+  ],
+  "short_games_missing_gold_15_examples": [],
+  "quarantined_candidate_games": 0,
+  "validation_failures": {},
+  "problem_examples": [],
+  "quality_warnings": {
+    "games_with_assumed_timestamp_timezone": 2772,
+    "games_without_explicit_series_id": 2772
+  },
+  "team_row_feature_coverage": {
+    "gold_diff_15": {
+      "numeric": 5278,
+      "missing": 266
+    },
+    "xp_diff_15": {
+      "numeric": 5278,
+      "missing": 266
+    },
+    "kills": {
+      "numeric": 5544
+    },
+    "duration": {
+      "numeric": 5544
+    }
+  },
+  "feature_coverage_by_league": {
+    "LCK": {
+      "gold_diff_15": {
+        "numeric": 1004
+      },
+      "xp_diff_15": {
+        "numeric": 1004
+      },
+      "kills": {
+        "numeric": 1004
+      },
+      "duration": {
+        "numeric": 1004
+      }
+    },
+    "LPL": {
+      "gold_diff_15": {
+        "missing": 264,
+        "numeric": 1084
+      },
+      "xp_diff_15": {
+        "missing": 264,
+        "numeric": 1084
+      },
+      "kills": {
+        "numeric": 1348
+      },
+      "duration": {
+        "numeric": 1348
+      }
+    },
+    "LCP": {
+      "gold_diff_15": {
+        "numeric": 566
+      },
+      "xp_diff_15": {
+        "numeric": 566
+      },
+      "kills": {
+        "numeric": 566
+      },
+      "duration": {
+        "numeric": 566
+      }
+    },
+    "LEC": {
+      "gold_diff_15": {
+        "numeric": 764,
+        "missing": 2
+      },
+      "xp_diff_15": {
+        "numeric": 764,
+        "missing": 2
+      },
+      "kills": {
+        "numeric": 766
+      },
+      "duration": {
+        "numeric": 766
+      }
+    },
+    "CBLOL": {
+      "gold_diff_15": {
+        "numeric": 598
+      },
+      "xp_diff_15": {
+        "numeric": 598
+      },
+      "kills": {
+        "numeric": 598
+      },
+      "duration": {
+        "numeric": 598
+      }
+    },
+    "LCS": {
+      "gold_diff_15": {
+        "numeric": 566
+      },
+      "xp_diff_15": {
+        "numeric": 566
+      },
+      "kills": {
+        "numeric": 566
+      },
+      "duration": {
+        "numeric": 566
+      }
+    },
+    "First Stand": {
+      "gold_diff_15": {
+        "numeric": 90
+      },
+      "xp_diff_15": {
+        "numeric": 90
+      },
+      "kills": {
+        "numeric": 90
+      },
+      "duration": {
+        "numeric": 90
+      }
+    },
+    "EWC": {
+      "gold_diff_15": {
+        "numeric": 464
+      },
+      "xp_diff_15": {
+        "numeric": 464
+      },
+      "kills": {
+        "numeric": 464
+      },
+      "duration": {
+        "numeric": 464
+      }
+    },
+    "MSI": {
+      "gold_diff_15": {
+        "numeric": 142
+      },
+      "xp_diff_15": {
+        "numeric": 142
+      },
+      "kills": {
+        "numeric": 142
+      },
+      "duration": {
+        "numeric": 142
+      }
+    }
+  },
+  "team_row_completeness_labels": {
+    "complete": 5292,
+    "partial": 252
+  },
+  "patch_team_row_counts": {
+    "16.01": 184,
+    "16.02": 239,
+    "16.03": 214,
+    "16.04": 36,
+    "16.05": 45,
+    "16.06": 49,
+    "16.07": 217,
+    "16.08": 227,
+    "16.09": 263,
+    "16.10": 252,
+    "16.11": 81,
+    "16.13": 122,
+    "16.14": 147,
+    "16.15": 230,
+    "16.16": 215,
+    "16.17": 251
+  },
+  "split_game_counts": [
+    {
+      "league": "CBLOL",
+      "split": "",
+      "playoffs": "0",
+      "games": 24
+    },
+    {
+      "league": "CBLOL",
+      "split": "Cup",
+      "playoffs": "0",
+      "games": 68
+    },
+    {
+      "league": "CBLOL",
+      "split": "Split 1",
+      "playoffs": "0",
+      "games": 66
+    },
+    {
+      "league": "CBLOL",
+      "split": "Split 1",
+      "playoffs": "1",
+      "games": 39
+    },
+    {
+      "league": "CBLOL",
+      "split": "Split 2",
+      "playoffs": "0",
+      "games": 62
+    },
+    {
+      "league": "CBLOL",
+      "split": "Split 2",
+      "playoffs": "1",
+      "games": 40
+    },
+    {
+      "league": "EWC",
+      "split": "",
+      "playoffs": "0",
+      "games": 181
+    },
+    {
+      "league": "EWC",
+      "split": "",
+      "playoffs": "1",
+      "games": 51
+    },
+    {
+      "league": "First Stand",
+      "split": "",
+      "playoffs": "0",
+      "games": 45
+    },
+    {
+      "league": "LCK",
+      "split": "Cup",
+      "playoffs": "0",
+      "games": 125
+    },
+    {
+      "league": "LCK",
+      "split": "Rounds 1-2",
+      "playoffs": "0",
+      "games": 204
+    },
+    {
+      "league": "LCK",
+      "split": "Rounds 1-2",
+      "playoffs": "1",
+      "games": 20
+    },
+    {
+      "league": "LCK",
+      "split": "Rounds 3-4",
+      "playoffs": "0",
+      "games": 98
+    },
+    {
+      "league": "LCK",
+      "split": "Rounds 3-4",
+      "playoffs": "1",
+      "games": 55
+    },
+    {
+      "league": "LCP",
+      "split": "Split 1",
+      "playoffs": "0",
+      "games": 70
+    },
+    {
+      "league": "LCP",
+      "split": "Split 1",
+      "playoffs": "1",
+      "games": 32
+    },
+    {
+      "league": "LCP",
+      "split": "Split 2",
+      "playoffs": "0",
+      "games": 69
+    },
+    {
+      "league": "LCP",
+      "split": "Split 2",
+      "playoffs": "1",
+      "games": 32
+    },
+    {
+      "league": "LCP",
+      "split": "Split 3",
+      "playoffs": "0",
+      "games": 80
+    },
+    {
+      "league": "LCS",
+      "split": "",
+      "playoffs": "0",
+      "games": 23
+    },
+    {
+      "league": "LCS",
+      "split": "Lock-In",
+      "playoffs": "0",
+      "games": 59
+    },
+    {
+      "league": "LCS",
+      "split": "Spring",
+      "playoffs": "0",
+      "games": 69
+    },
+    {
+      "league": "LCS",
+      "split": "Spring",
+      "playoffs": "1",
+      "games": 29
+    },
+    {
+      "league": "LCS",
+      "split": "Summer",
+      "playoffs": "0",
+      "games": 64
+    },
+    {
+      "league": "LCS",
+      "split": "Summer",
+      "playoffs": "1",
+      "games": 39
+    },
+    {
+      "league": "LEC",
+      "split": "Spring",
+      "playoffs": "0",
+      "games": 111
+    },
+    {
+      "league": "LEC",
+      "split": "Spring",
+      "playoffs": "1",
+      "games": 30
+    },
+    {
+      "league": "LEC",
+      "split": "Summer",
+      "playoffs": "0",
+      "games": 106
+    },
+    {
+      "league": "LEC",
+      "split": "Summer",
+      "playoffs": "1",
+      "games": 31
+    },
+    {
+      "league": "LEC",
+      "split": "Versus",
+      "playoffs": "0",
+      "games": 66
+    },
+    {
+      "league": "LEC",
+      "split": "Versus",
+      "playoffs": "1",
+      "games": 39
+    },
+    {
+      "league": "LPL",
+      "split": "Split 1",
+      "playoffs": "0",
+      "games": 137
+    },
+    {
+      "league": "LPL",
+      "split": "Split 1",
+      "playoffs": "1",
+      "games": 77
+    },
+    {
+      "league": "LPL",
+      "split": "Split 2",
+      "playoffs": "0",
+      "games": 171
+    },
+    {
+      "league": "LPL",
+      "split": "Split 2",
+      "playoffs": "1",
+      "games": 68
+    },
+    {
+      "league": "LPL",
+      "split": "Split 3",
+      "playoffs": "0",
+      "games": 166
+    },
+    {
+      "league": "LPL",
+      "split": "Split 3",
+      "playoffs": "1",
+      "games": 55
+    },
+    {
+      "league": "MSI",
+      "split": "",
+      "playoffs": "0",
+      "games": 71
+    }
+  ],
+  "team_aliases": {},
+  "distinct_team_ids_or_name_keys": 71,
+  "team_names_by_id": {
+    "oe:team:056c3140a119e44a03d462e2c832f27": [
+      "EDward Gaming"
+    ],
+    "oe:team:0916b3c324c8577b0c6344f3e067f62": [
+      "CTBC Flying Oyster"
+    ],
+    "oe:team:0dbb780176ecad18f17292d1f5653af": [
+      "Dignitas"
+    ],
+    "oe:team:0f0f407ca567fc73cc83d541ef45731": [
+      "Fuego"
+    ],
+    "oe:team:10b956b9c5ac7a1d0bf3ded8a12a78a": [
+      "Zeu5 Esports"
+    ],
+    "oe:team:1285e1c04d54de96502f12da4d49458": [
+      "Team Heretics"
+    ],
+    "oe:team:1c81857b6ce6a3c1cd9220fd97e077f": [
+      "Estral Esports"
+    ],
+    "oe:team:1d0389df0c5eea93b04122ba167c010": [
+      "Kiwoom DRX"
+    ],
+    "oe:team:289284911fb6f41c0ccaecc3a0c2891": [
+      "Disguised"
+    ],
+    "oe:team:2d096df29ab7e32950c86e0d72fc986": [
+      "Los Ratones"
+    ],
+    "oe:team:2e66da41dc460dd378e3bcc57042d31": [
+      "FlyQuest"
+    ],
+    "oe:team:3a1d18f46bcb3716ebcfcf4ef068934": [
+      "Hanwha Life Esports"
+    ],
+    "oe:team:42bf6c1040db8f2221ff017fa4d34e4": [
+      "Karmine Corp Blue"
+    ],
+    "oe:team:45c362a0cfc4b81f597b5ab89250df5": [
+      "Fluxo W7M"
+    ],
+    "oe:team:48d7941ccbd5b89aca46c57b0c2f8fb": [
+      "Ninjas in Pyjamas"
+    ],
+    "oe:team:4acc40654379b4da680be1bd3129dfa": [
+      "Movistar KOI"
+    ],
+    "oe:team:50f58982d91a36557ec8aec52ab014f": [
+      "Gen.G"
+    ],
+    "oe:team:53a258f289c26d94431c0496a54e151": [
+      "Invictus Gaming"
+    ],
+    "oe:team:53ef3d5a3ac5d88bc000eff7d87aeb3": [
+      "Leviatan"
+    ],
+    "oe:team:5c2e7e9ea8dfcba0150d9a5619baecf": [
+      "BNK FEARX"
+    ],
+    "oe:team:5cd2cd09ec94296f605dd13a2924d6c": [
+      "Nongshim RedForce"
+    ],
+    "oe:team:5f401785b6b78326f9a46b3c6b206ed": [
+      "LGD Gaming"
+    ],
+    "oe:team:606c6ac695907af3823ee6405c58ff1": [
+      "Weibo Gaming"
+    ],
+    "oe:team:61450737f7b683db4da7b3e0bf0dced": [
+      "paiN Gaming"
+    ],
+    "oe:team:62c1cd9465dc63824593ee5046f5aa8": [
+      "Team WE"
+    ],
+    "oe:team:658a021a796aa5501503220adb38cf4": [
+      "LOUD"
+    ],
+    "oe:team:67169969ecc058b307edfa9c6b7a3c0": [
+      "RED Canids"
+    ],
+    "oe:team:6cd05f0ac20bfb965a59dc8bcc4f184": [
+      "GiantX"
+    ],
+    "oe:team:740de582f50775c516c77ed7b923fd5": [
+      "Team Secret Whales"
+    ],
+    "oe:team:75760dca486d4682426196b76bd1a54": [
+      "SK Gaming"
+    ],
+    "oe:team:788115a84f68bc65fa6d3a4e0f67a3e": [
+      "Ground Zero Gaming"
+    ],
+    "oe:team:78f183fa5a7d8ecb22b9ad272c3abd7": [
+      "Fnatic"
+    ],
+    "oe:team:7d6673d3a9d00363c6bebc1a630da6e": [
+      "G2 Esports"
+    ],
+    "oe:team:7e56e9367c023df96cc8257ff4e16c0": [
+      "Deep Cross Gaming"
+    ],
+    "oe:team:87e3e1e75839f75a10bbc66e894d806": [
+      "FURIA"
+    ],
+    "oe:team:88438eabe047ccf143696ed57b23942": [
+      "9z Globant"
+    ],
+    "oe:team:8d09428f093dfbf3c488bce350af0b1": [
+      "Ultra Prime"
+    ],
+    "oe:team:8eb884e168f28402ce685bedebb5250": [
+      "Team Liquid"
+    ],
+    "oe:team:90938c428db11f6e372f5c6833b9743": [
+      "Solary"
+    ],
+    "oe:team:9336ce46babf314b50e3a103506ae0a": [
+      "Maryville University"
+    ],
+    "oe:team:9cae7677cd0dbcc1cd86653870b73c2": [
+      "GAM Esports"
+    ],
+    "oe:team:a2065488a11a2c0a2403a7b347eec61": [
+      "Shifters"
+    ],
+    "oe:team:a36eecb3eab2d2a79f411e462878d26": [
+      "KaBuM! Ilha das Lendas"
+    ],
+    "oe:team:a9145b7711873f53e610fbba0493484": [
+      "LNG Esports"
+    ],
+    "oe:team:b360f1d729b0a8e0f29a5243c4200fa": [
+      "Shopify Rebellion"
+    ],
+    "oe:team:b3c72a20aa56f5d28022ac04a7dc294": [
+      "DN SOOPers"
+    ],
+    "oe:team:b42d0f31f2727621b963042276817c4": [
+      "JD Gaming"
+    ],
+    "oe:team:b77b3f6068e20a2b3edc0ecd3dc70d4": [
+      "HANJIN BRION"
+    ],
+    "oe:team:b9e44c69c1a70fb35df9be96f9eafea": [
+      "Vivo Keyd Stars"
+    ],
+    "oe:team:bc3824b0bbb8139d16109178faa4822": [
+      "MVK Esports"
+    ],
+    "oe:team:ce499dea30cfce118f4fe85da0227e8": [
+      "T1"
+    ],
+    "oe:team:d2ba9f92d85cff67d60aaad88e61048": [
+      "Natus Vincere"
+    ],
+    "oe:team:d356a144644879dabb5f34cd99c886d": [
+      "Bilibili Gaming"
+    ],
+    "oe:team:d522e8753c50018adbb82305997c211": [
+      "Cupid Esports"
+    ],
+    "oe:team:d723992568441c6bafa2658129eade7": [
+      "KT Rolster"
+    ],
+    "oe:team:d8ca3fc1f0827ec76369af7b70d43e3": [
+      "Fukuoka SoftBank HAWKS gaming"
+    ],
+    "oe:team:da1143bf9a245b78a8dc86417de85b3": [
+      "LYON"
+    ],
+    "oe:team:dbea9378f0ff4aec096cd27745d47da": [
+      "Golden Lions"
+    ],
+    "oe:team:df80f468a3f9a722df056fe9104f052": [
+      "ThunderTalk Gaming"
+    ],
+    "oe:team:e0143514c5de64f62eb418004ca2751": [
+      "Galions"
+    ],
+    "oe:team:e435aa3ecb82a89e60544f5f5857a81": [
+      "DetonatioN FocusMe"
+    ],
+    "oe:team:e8d8ae992fe72acb7adc7bfcee31dbb": [
+      "Team Vitality"
+    ],
+    "oe:team:ea65e6cc48a9be50fc5334369a5fca5": [
+      "LØS"
+    ],
+    "oe:team:ed28f87f0cfdba0a2a8f183cebae73a": [
+      "Anyone's Legend"
+    ],
+    "oe:team:ee140e8e9d6abd0bfd2b7bc94639d43": [
+      "Team Secret"
+    ],
+    "oe:team:ef69efa6acebe94107f0cf1ba716806": [
+      "Dplus Kia"
+    ],
+    "oe:team:f3aa9bbd924ce3af42ac53f8326bc7c": [
+      "Karmine Corp"
+    ],
+    "oe:team:f4c4528c6981e104a11ea7548630c23": [
+      "Oh My God"
+    ],
+    "oe:team:f90422f1cbcb24bc2a855202582ec29": [
+      "Sentinels"
+    ],
+    "oe:team:fc8e90107dabb9a35c490b0d86adea0": [
+      "Cloud9"
+    ],
+    "oe:team:fcec508e780bbd1ad493852640f5b36": [
+      "Top Esports"
+    ]
+  },
+  "ambiguous_team_names": {},
+  "observed_lineup_changes": [
+    {
+      "team_id": "oe:team:056c3140a119e44a03d462e2c832f27",
+      "date": "2026-04-10T09:12:32+00:00",
+      "game_id": "13217-13217_game_1",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:056c3140a119e44a03d462e2c832f27",
+      "date": "2026-05-13T09:10:08+00:00",
+      "game_id": "13269-13269_game_1",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:056c3140a119e44a03d462e2c832f27",
+      "date": "2026-05-13T11:13:02+00:00",
+      "game_id": "13269-13269_game_3",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:056c3140a119e44a03d462e2c832f27",
+      "date": "2026-05-24T06:07:37+00:00",
+      "game_id": "13281-13281_game_1",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:056c3140a119e44a03d462e2c832f27",
+      "date": "2026-07-22T09:13:58+00:00",
+      "game_id": "13366-13366_game_1",
+      "players_retained": 3
+    },
+    {
+      "team_id": "oe:team:056c3140a119e44a03d462e2c832f27",
+      "date": "2026-08-05T12:33:28+00:00",
+      "game_id": "13393-13393_game_1",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:056c3140a119e44a03d462e2c832f27",
+      "date": "2026-08-14T07:13:20+00:00",
+      "game_id": "13411-13411_game_1",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:056c3140a119e44a03d462e2c832f27",
+      "date": "2026-08-16T13:32:10+00:00",
+      "game_id": "13419-13419_game_1",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:0916b3c324c8577b0c6344f3e067f62",
+      "date": "2026-04-18T09:26:51+00:00",
+      "game_id": "LOLTMNT02_378671",
+      "players_retained": 3
+    },
+    {
+      "team_id": "oe:team:0dbb780176ecad18f17292d1f5653af",
+      "date": "2026-01-31T23:09:01+00:00",
+      "game_id": "LOLTMNT01_334794",
+      "players_retained": 3
+    },
+    {
+      "team_id": "oe:team:0dbb780176ecad18f17292d1f5653af",
+      "date": "2026-07-25T22:03:50+00:00",
+      "game_id": "LOLTMNT02_440292",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:0dbb780176ecad18f17292d1f5653af",
+      "date": "2026-08-09T20:08:29+00:00",
+      "game_id": "LOLTMNT01_440962",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:1285e1c04d54de96502f12da4d49458",
+      "date": "2026-03-29T15:07:54+00:00",
+      "game_id": "LOLTMNT05_184124",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:1285e1c04d54de96502f12da4d49458",
+      "date": "2026-04-19T16:58:43+00:00",
+      "game_id": "LOLTMNT05_186082",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:1285e1c04d54de96502f12da4d49458",
+      "date": "2026-07-31T15:08:55+00:00",
+      "game_id": "LOLTMNT04_182038",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:1d0389df0c5eea93b04122ba167c010",
+      "date": "2026-04-04T10:30:33+00:00",
+      "game_id": "LOLTMNT02_377394",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:1d0389df0c5eea93b04122ba167c010",
+      "date": "2026-05-29T08:09:08+00:00",
+      "game_id": "LOLTMNT02_415033",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:1d0389df0c5eea93b04122ba167c010",
+      "date": "2026-07-29T08:05:41+00:00",
+      "game_id": "LOLTMNT02_442746",
+      "players_retained": 3
+    },
+    {
+      "team_id": "oe:team:1d0389df0c5eea93b04122ba167c010",
+      "date": "2026-07-31T10:28:31+00:00",
+      "game_id": "LOLTMNT02_444519",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:1d0389df0c5eea93b04122ba167c010",
+      "date": "2026-08-22T12:30:01+00:00",
+      "game_id": "LOLTMNT02_457558",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:289284911fb6f41c0ccaecc3a0c2891",
+      "date": "2026-02-08T00:07:59+00:00",
+      "game_id": "LOLTMNT02_350086",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:289284911fb6f41c0ccaecc3a0c2891",
+      "date": "2026-05-09T22:00:36+00:00",
+      "game_id": "LOLTMNT01_380953",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:3a1d18f46bcb3716ebcfcf4ef068934",
+      "date": "2026-05-21T08:06:57+00:00",
+      "game_id": "LOLTMNT02_406958",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:3a1d18f46bcb3716ebcfcf4ef068934",
+      "date": "2026-05-23T12:08:47+00:00",
+      "game_id": "LOLTMNT02_410580",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:3a1d18f46bcb3716ebcfcf4ef068934",
+      "date": "2026-08-15T08:08:03+00:00",
+      "game_id": "LOLTMNT01_443758",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:3a1d18f46bcb3716ebcfcf4ef068934",
+      "date": "2026-08-20T08:07:41+00:00",
+      "game_id": "LOLTMNT02_454038",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:45c362a0cfc4b81f597b5ab89250df5",
+      "date": "2026-03-29T17:59:21+00:00",
+      "game_id": "LOLTMNT02_373750",
+      "players_retained": 3
+    },
+    {
+      "team_id": "oe:team:45c362a0cfc4b81f597b5ab89250df5",
+      "date": "2026-07-26T16:09:53+00:00",
+      "game_id": "LOLTMNT02_439648",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:48d7941ccbd5b89aca46c57b0c2f8fb",
+      "date": "2026-07-26T07:12:20+00:00",
+      "game_id": "13376-13376_game_1",
+      "players_retained": 3
+    },
+    {
+      "team_id": "oe:team:53a258f289c26d94431c0496a54e151",
+      "date": "2026-04-04T07:13:58+00:00",
+      "game_id": "13208-13208_game_1",
+      "players_retained": 1
+    },
+    {
+      "team_id": "oe:team:53a258f289c26d94431c0496a54e151",
+      "date": "2026-05-01T11:34:18+00:00",
+      "game_id": "13251-13251_game_1",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:53a258f289c26d94431c0496a54e151",
+      "date": "2026-05-23T12:38:43+00:00",
+      "game_id": "13280-13280_game_3",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:53a258f289c26d94431c0496a54e151",
+      "date": "2026-07-25T09:20:27+00:00",
+      "game_id": "13374-13374_game_1",
+      "players_retained": 2
+    },
+    {
+      "team_id": "oe:team:53a258f289c26d94431c0496a54e151",
+      "date": "2026-08-16T10:11:59+00:00",
+      "game_id": "13418-13418_game_1",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:53ef3d5a3ac5d88bc000eff7d87aeb3",
+      "date": "2026-03-29T17:59:21+00:00",
+      "game_id": "LOLTMNT02_373750",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:53ef3d5a3ac5d88bc000eff7d87aeb3",
+      "date": "2026-07-26T16:09:53+00:00",
+      "game_id": "LOLTMNT02_439648",
+      "players_retained": 3
+    },
+    {
+      "team_id": "oe:team:5c2e7e9ea8dfcba0150d9a5619baecf",
+      "date": "2026-04-12T08:05:05+00:00",
+      "game_id": "LOLTMNT01_364097",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:5c2e7e9ea8dfcba0150d9a5619baecf",
+      "date": "2026-04-30T11:13:48+00:00",
+      "game_id": "LOLTMNT02_394154",
+      "players_retained": 3
+    },
+    {
+      "team_id": "oe:team:5c2e7e9ea8dfcba0150d9a5619baecf",
+      "date": "2026-05-03T10:24:27+00:00",
+      "game_id": "LOLTMNT02_395739",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:5cd2cd09ec94296f605dd13a2924d6c",
+      "date": "2026-05-02T11:03:54+00:00",
+      "game_id": "LOLTMNT02_394554",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:5cd2cd09ec94296f605dd13a2924d6c",
+      "date": "2026-05-09T10:15:45+00:00",
+      "game_id": "LOLTMNT01_379647",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:5cd2cd09ec94296f605dd13a2924d6c",
+      "date": "2026-05-18T10:10:03+00:00",
+      "game_id": "LOLTMNT02_404560",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:5cd2cd09ec94296f605dd13a2924d6c",
+      "date": "2026-05-20T12:36:35+00:00",
+      "game_id": "LOLTMNT02_406517",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:5cd2cd09ec94296f605dd13a2924d6c",
+      "date": "2026-05-23T11:15:14+00:00",
+      "game_id": "LOLTMNT02_409510",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:5f401785b6b78326f9a46b3c6b206ed",
+      "date": "2026-04-12T09:13:07+00:00",
+      "game_id": "13221-13221_game_1",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:5f401785b6b78326f9a46b3c6b206ed",
+      "date": "2026-07-22T09:13:58+00:00",
+      "game_id": "13366-13366_game_1",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:606c6ac695907af3823ee6405c58ff1",
+      "date": "2026-04-04T09:31:10+00:00",
+      "game_id": "13209-13209_game_1",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:606c6ac695907af3823ee6405c58ff1",
+      "date": "2026-05-07T09:12:07+00:00",
+      "game_id": "13259-13259_game_1",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:606c6ac695907af3823ee6405c58ff1",
+      "date": "2026-07-25T09:20:27+00:00",
+      "game_id": "13374-13374_game_1",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:606c6ac695907af3823ee6405c58ff1",
+      "date": "2026-08-08T07:20:09+00:00",
+      "game_id": "13400-13400_game_1",
+      "players_retained": 3
+    },
+    {
+      "team_id": "oe:team:61450737f7b683db4da7b3e0bf0dced",
+      "date": "2026-01-31T17:59:58+00:00",
+      "game_id": "LOLTMNT01_333675",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:61450737f7b683db4da7b3e0bf0dced",
+      "date": "2026-03-29T16:15:54+00:00",
+      "game_id": "LOLTMNT02_372711",
+      "players_retained": 3
+    },
+    {
+      "team_id": "oe:team:61450737f7b683db4da7b3e0bf0dced",
+      "date": "2026-04-11T18:05:38+00:00",
+      "game_id": "LOLTMNT01_362850",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:61450737f7b683db4da7b3e0bf0dced",
+      "date": "2026-06-07T21:33:37+00:00",
+      "game_id": "LOLTMNT01_398487",
+      "players_retained": 3
+    },
+    {
+      "team_id": "oe:team:61450737f7b683db4da7b3e0bf0dced",
+      "date": "2026-07-25T19:31:37+00:00",
+      "game_id": "LOLTMNT02_439292",
+      "players_retained": 3
+    },
+    {
+      "team_id": "oe:team:61450737f7b683db4da7b3e0bf0dced",
+      "date": "2026-08-30T16:10:56+00:00",
+      "game_id": "LOLTMNT01_450939",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:62c1cd9465dc63824593ee5046f5aa8",
+      "date": "2026-04-04T11:31:14+00:00",
+      "game_id": "13210-13210_game_1",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:62c1cd9465dc63824593ee5046f5aa8",
+      "date": "2026-04-22T09:14:11+00:00",
+      "game_id": "13233-13233_game_1",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:62c1cd9465dc63824593ee5046f5aa8",
+      "date": "2026-04-29T11:33:11+00:00",
+      "game_id": "13247-13247_game_1",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:658a021a796aa5501503220adb38cf4",
+      "date": "2026-02-21T16:10:18+00:00",
+      "game_id": "LOLTMNT03_344348",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:658a021a796aa5501503220adb38cf4",
+      "date": "2026-04-26T16:10:23+00:00",
+      "game_id": "LOLTMNT02_389612",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:658a021a796aa5501503220adb38cf4",
+      "date": "2026-07-25T19:31:37+00:00",
+      "game_id": "LOLTMNT02_439292",
+      "players_retained": 2
+    },
+    {
+      "team_id": "oe:team:67169969ecc058b307edfa9c6b7a3c0",
+      "date": "2026-03-28T16:14:08+00:00",
+      "game_id": "LOLTMNT02_373306",
+      "players_retained": 3
+    },
+    {
+      "team_id": "oe:team:67169969ecc058b307edfa9c6b7a3c0",
+      "date": "2026-04-04T16:10:27+00:00",
+      "game_id": "LOLTMNT01_356558",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:67169969ecc058b307edfa9c6b7a3c0",
+      "date": "2026-07-26T18:11:19+00:00",
+      "game_id": "LOLTMNT02_440629",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:67169969ecc058b307edfa9c6b7a3c0",
+      "date": "2026-08-02T17:48:18+00:00",
+      "game_id": "LOLTMNT01_433904",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:6cd05f0ac20bfb965a59dc8bcc4f184",
+      "date": "2026-08-01T15:08:25+00:00",
+      "game_id": "LOLTMNT04_182081",
+      "players_retained": 3
+    },
+    {
+      "team_id": "oe:team:740de582f50775c516c77ed7b923fd5",
+      "date": "2026-01-30T07:01:47+00:00",
+      "game_id": "LOLTMNT01_331565",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:740de582f50775c516c77ed7b923fd5",
+      "date": "2026-02-01T06:18:14+00:00",
+      "game_id": "LOLTMNT01_334969",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:75760dca486d4682426196b76bd1a54",
+      "date": "2026-04-28T18:26:35+00:00",
+      "game_id": "LOLTMNT02_391455",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:75760dca486d4682426196b76bd1a54",
+      "date": "2026-05-02T16:58:51+00:00",
+      "game_id": "LOLTMNT04_159194",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:75760dca486d4682426196b76bd1a54",
+      "date": "2026-08-01T15:08:25+00:00",
+      "game_id": "LOLTMNT04_182081",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:788115a84f68bc65fa6d3a4e0f67a3e",
+      "date": "2026-07-25T09:18:53+00:00",
+      "game_id": "LOLTMNT02_439022",
+      "players_retained": 2
+    },
+    {
+      "team_id": "oe:team:78f183fa5a7d8ecb22b9ad272c3abd7",
+      "date": "2026-08-02T17:19:20+00:00",
+      "game_id": "LOLTMNT04_182141",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:7e56e9367c023df96cc8257ff4e16c0",
+      "date": "2026-05-16T09:16:45+00:00",
+      "game_id": "LOLTMNT02_402697",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:7e56e9367c023df96cc8257ff4e16c0",
+      "date": "2026-05-16T10:10:33+00:00",
+      "game_id": "LOLTMNT02_402712",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:87e3e1e75839f75a10bbc66e894d806",
+      "date": "2026-08-01T16:11:48+00:00",
+      "game_id": "LOLTMNT01_434560",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:87e3e1e75839f75a10bbc66e894d806",
+      "date": "2026-08-07T23:48:44+00:00",
+      "game_id": "LOLTMNT01_439279",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:87e3e1e75839f75a10bbc66e894d806",
+      "date": "2026-09-12T16:11:02+00:00",
+      "game_id": "LOLTMNT01_461062",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:87e3e1e75839f75a10bbc66e894d806",
+      "date": "2026-09-26T16:09:42+00:00",
+      "game_id": "LOLTMNT01_466723",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:8d09428f093dfbf3c488bce350af0b1",
+      "date": "2026-04-15T09:12:33+00:00",
+      "game_id": "13223-13223_game_1",
+      "players_retained": 2
+    },
+    {
+      "team_id": "oe:team:8d09428f093dfbf3c488bce350af0b1",
+      "date": "2026-04-26T09:12:56+00:00",
+      "game_id": "13242-13242_game_1",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:9cae7677cd0dbcc1cd86653870b73c2",
+      "date": "2026-06-05T09:16:09+00:00",
+      "game_id": "LOLTMNT02_418305",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:9cae7677cd0dbcc1cd86653870b73c2",
+      "date": "2026-06-06T10:54:29+00:00",
+      "game_id": "LOLTMNT02_418380",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:9cae7677cd0dbcc1cd86653870b73c2",
+      "date": "2026-07-15T10:46:49+00:00",
+      "game_id": "LOLTMNT01_426778",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:a2065488a11a2c0a2403a7b347eec61",
+      "date": "2026-04-28T15:16:33+00:00",
+      "game_id": "LOLTMNT05_186703",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:a2065488a11a2c0a2403a7b347eec61",
+      "date": "2026-07-31T16:58:35+00:00",
+      "game_id": "LOLTMNT04_182048",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:a9145b7711873f53e610fbba0493484",
+      "date": "2026-07-26T07:12:20+00:00",
+      "game_id": "13376-13376_game_1",
+      "players_retained": 2
+    },
+    {
+      "team_id": "oe:team:a9145b7711873f53e610fbba0493484",
+      "date": "2026-08-02T10:15:31+00:00",
+      "game_id": "13390-13390_game_1",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:a9145b7711873f53e610fbba0493484",
+      "date": "2026-08-15T07:13:13+00:00",
+      "game_id": "13414-13414_game_1",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:b360f1d729b0a8e0f29a5243c4200fa",
+      "date": "2026-07-26T22:15:36+00:00",
+      "game_id": "LOLTMNT02_439792",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:b3c72a20aa56f5d28022ac04a7dc294",
+      "date": "2026-01-21T11:14:52+00:00",
+      "game_id": "LOLTMNT03_338517",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:b3c72a20aa56f5d28022ac04a7dc294",
+      "date": "2026-01-29T09:53:36+00:00",
+      "game_id": "LOLTMNT01_332152",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:b3c72a20aa56f5d28022ac04a7dc294",
+      "date": "2026-02-06T10:59:51+00:00",
+      "game_id": "LOLTMNT01_338447",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:b3c72a20aa56f5d28022ac04a7dc294",
+      "date": "2026-04-10T09:00:46+00:00",
+      "game_id": "LOLTMNT01_361274",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:b3c72a20aa56f5d28022ac04a7dc294",
+      "date": "2026-04-12T08:05:05+00:00",
+      "game_id": "LOLTMNT01_364097",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:b3c72a20aa56f5d28022ac04a7dc294",
+      "date": "2026-04-18T10:19:42+00:00",
+      "game_id": "LOLTMNT01_368165",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:b3c72a20aa56f5d28022ac04a7dc294",
+      "date": "2026-05-03T10:24:27+00:00",
+      "game_id": "LOLTMNT02_395739",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:b3c72a20aa56f5d28022ac04a7dc294",
+      "date": "2026-05-13T10:12:11+00:00",
+      "game_id": "LOLTMNT01_384771",
+      "players_retained": 3
+    },
+    {
+      "team_id": "oe:team:b3c72a20aa56f5d28022ac04a7dc294",
+      "date": "2026-05-15T10:22:39+00:00",
+      "game_id": "LOLTMNT01_388537",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:b3c72a20aa56f5d28022ac04a7dc294",
+      "date": "2026-05-18T10:10:03+00:00",
+      "game_id": "LOLTMNT02_404560",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:b3c72a20aa56f5d28022ac04a7dc294",
+      "date": "2026-05-22T08:06:39+00:00",
+      "game_id": "LOLTMNT02_408582",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:b3c72a20aa56f5d28022ac04a7dc294",
+      "date": "2026-07-30T08:07:12+00:00",
+      "game_id": "LOLTMNT02_444167",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:b42d0f31f2727621b963042276817c4",
+      "date": "2026-08-16T09:03:54+00:00",
+      "game_id": "13417-13417_game_3",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:b42d0f31f2727621b963042276817c4",
+      "date": "2026-08-20T09:14:25+00:00",
+      "game_id": "13423-13423_game_1",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:b42d0f31f2727621b963042276817c4",
+      "date": "2026-08-23T09:33:11+00:00",
+      "game_id": "13432-13432_game_1",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:b42d0f31f2727621b963042276817c4",
+      "date": "2026-08-30T09:15:09+00:00",
+      "game_id": "13495-13495_game_1",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:b42d0f31f2727621b963042276817c4",
+      "date": "2026-08-30T10:59:33+00:00",
+      "game_id": "13495-13495_game_3",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:b42d0f31f2727621b963042276817c4",
+      "date": "2026-09-05T11:23:05+00:00",
+      "game_id": "13499-13499_game_1",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:b77b3f6068e20a2b3edc0ecd3dc70d4",
+      "date": "2026-04-01T08:11:43+00:00",
+      "game_id": "LOLTMNT02_375568",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:b77b3f6068e20a2b3edc0ecd3dc70d4",
+      "date": "2026-04-25T08:07:29+00:00",
+      "game_id": "LOLTMNT02_388457",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:b77b3f6068e20a2b3edc0ecd3dc70d4",
+      "date": "2026-06-06T09:57:23+00:00",
+      "game_id": "LOLTMNT01_397929",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:b77b3f6068e20a2b3edc0ecd3dc70d4",
+      "date": "2026-07-31T10:28:31+00:00",
+      "game_id": "LOLTMNT02_444519",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:b9e44c69c1a70fb35df9be96f9eafea",
+      "date": "2026-02-14T16:11:54+00:00",
+      "game_id": "LOLTMNT02_353419",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:b9e44c69c1a70fb35df9be96f9eafea",
+      "date": "2026-03-29T16:15:54+00:00",
+      "game_id": "LOLTMNT02_372711",
+      "players_retained": 2
+    },
+    {
+      "team_id": "oe:team:b9e44c69c1a70fb35df9be96f9eafea",
+      "date": "2026-04-26T18:57:12+00:00",
+      "game_id": "LOLTMNT02_390565",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:b9e44c69c1a70fb35df9be96f9eafea",
+      "date": "2026-05-23T18:04:34+00:00",
+      "game_id": "LOLTMNT02_410906",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:b9e44c69c1a70fb35df9be96f9eafea",
+      "date": "2026-06-07T16:06:52+00:00",
+      "game_id": "LOLTMNT01_399326",
+      "players_retained": 3
+    },
+    {
+      "team_id": "oe:team:b9e44c69c1a70fb35df9be96f9eafea",
+      "date": "2026-07-26T18:11:19+00:00",
+      "game_id": "LOLTMNT02_440629",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:bc3824b0bbb8139d16109178faa4822",
+      "date": "2026-01-17T09:10:21+00:00",
+      "game_id": "LOLTMNT01_321867",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:bc3824b0bbb8139d16109178faa4822",
+      "date": "2026-01-23T08:41:06+00:00",
+      "game_id": "LOLTMNT02_343084",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:bc3824b0bbb8139d16109178faa4822",
+      "date": "2026-01-29T06:17:45+00:00",
+      "game_id": "LOLTMNT01_331067",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:bc3824b0bbb8139d16109178faa4822",
+      "date": "2026-01-29T07:14:30+00:00",
+      "game_id": "LOLTMNT01_331080",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:bc3824b0bbb8139d16109178faa4822",
+      "date": "2026-01-31T10:06:15+00:00",
+      "game_id": "LOLTMNT04_151244",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:bc3824b0bbb8139d16109178faa4822",
+      "date": "2026-01-31T11:07:09+00:00",
+      "game_id": "LOLTMNT04_151246",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:bc3824b0bbb8139d16109178faa4822",
+      "date": "2026-02-06T06:21:07+00:00",
+      "game_id": "LOLTMNT01_338362",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:bc3824b0bbb8139d16109178faa4822",
+      "date": "2026-02-08T08:27:09+00:00",
+      "game_id": "LOLTMNT01_337854",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:bc3824b0bbb8139d16109178faa4822",
+      "date": "2026-02-08T10:25:21+00:00",
+      "game_id": "LOLTMNT01_337861",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:bc3824b0bbb8139d16109178faa4822",
+      "date": "2026-04-04T11:24:09+00:00",
+      "game_id": "LOLTMNT01_356478",
+      "players_retained": 0
+    },
+    {
+      "team_id": "oe:team:bc3824b0bbb8139d16109178faa4822",
+      "date": "2026-04-11T12:02:31+00:00",
+      "game_id": "LOLTMNT01_361963",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:bc3824b0bbb8139d16109178faa4822",
+      "date": "2026-04-11T12:58:20+00:00",
+      "game_id": "LOLTMNT01_361987",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:bc3824b0bbb8139d16109178faa4822",
+      "date": "2026-04-18T12:17:58+00:00",
+      "game_id": "LOLTMNT02_378714",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:bc3824b0bbb8139d16109178faa4822",
+      "date": "2026-05-09T11:24:17+00:00",
+      "game_id": "LOLTMNT01_379675",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:bc3824b0bbb8139d16109178faa4822",
+      "date": "2026-05-16T12:06:39+00:00",
+      "game_id": "LOLTMNT02_402752",
+      "players_retained": 3
+    },
+    {
+      "team_id": "oe:team:bc3824b0bbb8139d16109178faa4822",
+      "date": "2026-05-23T10:10:44+00:00",
+      "game_id": "LOLTMNT02_409439",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:bc3824b0bbb8139d16109178faa4822",
+      "date": "2026-07-25T09:18:53+00:00",
+      "game_id": "LOLTMNT02_439022",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:ce499dea30cfce118f4fe85da0227e8",
+      "date": "2026-08-08T08:08:11+00:00",
+      "game_id": "LOLTMNT01_440328",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:ce499dea30cfce118f4fe85da0227e8",
+      "date": "2026-08-14T08:08:00+00:00",
+      "game_id": "LOLTMNT01_443574",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:d356a144644879dabb5f34cd99c886d",
+      "date": "2026-07-23T12:51:10+00:00",
+      "game_id": "13369-13369_game_1",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:d356a144644879dabb5f34cd99c886d",
+      "date": "2026-08-12T12:48:07+00:00",
+      "game_id": "13407-13407_game_1",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:d356a144644879dabb5f34cd99c886d",
+      "date": "2026-08-20T12:18:24+00:00",
+      "game_id": "13424-13424_game_1",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:d356a144644879dabb5f34cd99c886d",
+      "date": "2026-08-23T12:28:51+00:00",
+      "game_id": "13433-13433_game_1",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:d356a144644879dabb5f34cd99c886d",
+      "date": "2026-09-03T09:18:59+00:00",
+      "game_id": "13497-13497_game_1",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:d723992568441c6bafa2658129eade7",
+      "date": "2026-01-14T09:06:16+00:00",
+      "game_id": "LOLTMNT03_337069",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:d723992568441c6bafa2658129eade7",
+      "date": "2026-01-17T12:05:01+00:00",
+      "game_id": "LOLTMNT03_337782",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:d723992568441c6bafa2658129eade7",
+      "date": "2026-01-23T09:00:11+00:00",
+      "game_id": "LOLTMNT03_341150",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:d723992568441c6bafa2658129eade7",
+      "date": "2026-01-25T12:29:52+00:00",
+      "game_id": "LOLTMNT03_341446",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:d723992568441c6bafa2658129eade7",
+      "date": "2026-01-30T08:56:59+00:00",
+      "game_id": "LOLTMNT01_332667",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:d723992568441c6bafa2658129eade7",
+      "date": "2026-04-01T10:23:34+00:00",
+      "game_id": "LOLTMNT02_374657",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:d723992568441c6bafa2658129eade7",
+      "date": "2026-05-20T11:01:11+00:00",
+      "game_id": "LOLTMNT02_406455",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:d723992568441c6bafa2658129eade7",
+      "date": "2026-05-22T10:20:35+00:00",
+      "game_id": "LOLTMNT02_407714",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:d723992568441c6bafa2658129eade7",
+      "date": "2026-07-29T10:14:12+00:00",
+      "game_id": "LOLTMNT02_441926",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:d723992568441c6bafa2658129eade7",
+      "date": "2026-08-12T11:02:08+00:00",
+      "game_id": "LOLTMNT01_441955",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:da1143bf9a245b78a8dc86417de85b3",
+      "date": "2026-05-10T23:47:40+00:00",
+      "game_id": "LOLTMNT01_382451",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:da1143bf9a245b78a8dc86417de85b3",
+      "date": "2026-05-11T00:44:19+00:00",
+      "game_id": "LOLTMNT01_382460",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:da1143bf9a245b78a8dc86417de85b3",
+      "date": "2026-05-17T21:47:21+00:00",
+      "game_id": "LOLTMNT02_403327",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:da1143bf9a245b78a8dc86417de85b3",
+      "date": "2026-05-17T22:50:22+00:00",
+      "game_id": "LOLTMNT02_403334",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:da1143bf9a245b78a8dc86417de85b3",
+      "date": "2026-05-17T23:43:46+00:00",
+      "game_id": "LOLTMNT02_404341",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:da1143bf9a245b78a8dc86417de85b3",
+      "date": "2026-05-24T20:12:10+00:00",
+      "game_id": "LOLTMNT02_412354",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:da1143bf9a245b78a8dc86417de85b3",
+      "date": "2026-07-25T20:13:30+00:00",
+      "game_id": "LOLTMNT02_440260",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:da1143bf9a245b78a8dc86417de85b3",
+      "date": "2026-08-29T22:53:50+00:00",
+      "game_id": "LOLTMNT01_451553",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:df80f468a3f9a722df056fe9104f052",
+      "date": "2026-04-15T09:12:33+00:00",
+      "game_id": "13223-13223_game_1",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:e435aa3ecb82a89e60544f5f5857a81",
+      "date": "2026-01-23T06:47:18+00:00",
+      "game_id": "LOLTMNT02_344078",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:e435aa3ecb82a89e60544f5f5857a81",
+      "date": "2026-04-04T09:17:19+00:00",
+      "game_id": "LOLTMNT01_354729",
+      "players_retained": 3
+    },
+    {
+      "team_id": "oe:team:e8d8ae992fe72acb7adc7bfcee31dbb",
+      "date": "2026-07-24T18:04:53+00:00",
+      "game_id": "LOLTMNT05_213152",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:ea65e6cc48a9be50fc5334369a5fca5",
+      "date": "2026-05-03T16:10:33+00:00",
+      "game_id": "LOLTMNT01_372643",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:ed28f87f0cfdba0a2a8f183cebae73a",
+      "date": "2026-07-23T09:14:40+00:00",
+      "game_id": "13368-13368_game_1",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:ef69efa6acebe94107f0cf1ba716806",
+      "date": "2026-05-29T08:09:08+00:00",
+      "game_id": "LOLTMNT02_415033",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:ef69efa6acebe94107f0cf1ba716806",
+      "date": "2026-05-31T10:17:32+00:00",
+      "game_id": "LOLTMNT02_416470",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:f4c4528c6981e104a11ea7548630c23",
+      "date": "2026-01-30T09:11:00+00:00",
+      "game_id": "13098-13098_game_1",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:f4c4528c6981e104a11ea7548630c23",
+      "date": "2026-04-17T09:11:55+00:00",
+      "game_id": "13227-13227_game_1",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:f4c4528c6981e104a11ea7548630c23",
+      "date": "2026-04-24T09:13:50+00:00",
+      "game_id": "13237-13237_game_1",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:f4c4528c6981e104a11ea7548630c23",
+      "date": "2026-04-24T10:08:44+00:00",
+      "game_id": "13237-13237_game_2",
+      "players_retained": 4
+    },
+    {
+      "team_id": "oe:team:fc8e90107dabb9a35c490b0d86adea0",
+      "date": "2026-07-26T20:24:27+00:00",
+      "game_id": "LOLTMNT02_439759",
+      "players_retained": 3
+    },
+    {
+      "team_id": "oe:team:fcec508e780bbd1ad493852640f5b36",
+      "date": "2026-04-04T07:13:58+00:00",
+      "game_id": "13208-13208_game_1",
+      "players_retained": 2
+    },
+    {
+      "team_id": "oe:team:fcec508e780bbd1ad493852640f5b36",
+      "date": "2026-07-22T11:54:52+00:00",
+      "game_id": "13367-13367_game_1",
+      "players_retained": 4
+    }
+  ],
+  "cross_region_game_counts": {
+    "China / Korea": 30,
+    "Asia Pacific / EMEA": 9,
+    "Brazil / North America": 10,
+    "China / EMEA": 16,
+    "Asia Pacific / Korea": 9,
+    "Korea / North America": 15,
+    "Brazil / China": 5,
+    "EMEA / Korea": 25,
+    "China / North America": 8,
+    "Asia Pacific / North America": 6,
+    "EMEA / North America": 8,
+    "Asia Pacific / China": 4,
+    "Brazil / Korea": 6,
+    "Brazil / EMEA": 1
+  },
+  "international_games_with_unresolved_regions": 24,
+  "same_region_international_game_counts": {
+    "China": 3,
+    "North America": 33,
+    "EMEA": 33,
+    "Korea": 42,
+    "Asia Pacific": 31,
+    "Brazil": 30
+  },
+  "game_ids_reused_across_leagues": 0,
+  "review_required": [
+    "Coverage must be reconciled with an independent competition schedule.",
+    "Publication times and pre-cutoff availability have not been verified.",
+    "Series identifiers and historical prediction timing require review.",
+    "Source timestamp timezone has not been verified.",
+    "Game-duration units have not been verified; completion before the cutoff is unconfirmed."
+  ],
+  "config_source": "configs\\audit_2026.json"
+}

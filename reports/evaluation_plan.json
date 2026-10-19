@@ -1,0 +1,160 @@
+{
+  "status": "candidate_fold_membership_prepared",
+  "execution_ready": false,
+  "audit_manifest_sha256": "90a2cdd3b092a539b4358765d010d324bb700cf83c513fb0636bf64cac6f3d17",
+  "protocol": {
+    "schema_version": 1,
+    "task": "frozen_pre_tournament_game_probabilities",
+    "purpose": "Historical development backtests, not an untouched research test: 2026 outcomes already appeared in full-pool diagnostics.",
+    "selection_rule": "Choose model/settings using historical backtests only; freeze before any Swiss 2026 outcomes. Do not describe the earlier September Elo test as untouched.",
+    "folds": [
+      {
+        "id": "fst_2026",
+        "fit_before_utc": "2026-03-16T00:00:00Z",
+        "event": "First Stand",
+        "stage": "main_event",
+        "start_utc": "2026-03-16T00:00:00Z",
+        "end_utc_exclusive": "2026-03-23T00:00:00Z",
+        "source": "https://lolesports.com/en-AU/news/season-start-2026-lol-esports"
+      },
+      {
+        "id": "msi_2026",
+        "fit_before_utc": "2026-06-28T00:00:00Z",
+        "event": "MSI",
+        "stage": "main_event",
+        "start_utc": "2026-06-28T00:00:00Z",
+        "end_utc_exclusive": "2026-07-13T00:00:00Z",
+        "source": "https://lolesports.com/en-US/news/msi-and-worlds-updates"
+      },
+      {
+        "id": "ewc_2026",
+        "fit_before_utc": "2026-07-15T00:00:00Z",
+        "event": "EWC",
+        "stage": "main_event",
+        "start_utc": "2026-07-15T00:00:00Z",
+        "end_utc_exclusive": "2026-07-20T00:00:00Z",
+        "source": "https://ewc-web.prod.esf-systems.com/en/competitions/2026/league-of-legends"
+      }
+    ],
+    "freeze_model_for_entire_event": true,
+    "purge_training_series_overlapping_fit_boundary": true,
+    "unknown_missing_games": "Provisional source series and publication times remain limitations. No claim of official complete-series recovery.",
+    "target_context": "Unknown future map side is excluded from deployable inputs or marginalized under a documented pre-draft selection model. Conditional-on-realized-side diagnostics are separate from tournament forecast evaluation.",
+    "historical_prior_policy": "Only records available before each fold may inform priors or preprocessing. Earlier team effects are season-specific. Cross-season regional bridges must be reviewed and specified before fitting.",
+    "comparators": [
+      "constant_50_percent",
+      "nonhierarchical_bradley_terry",
+      "hierarchical_static",
+      "hierarchical_with_side",
+      "hierarchical_with_time",
+      "hierarchical_with_side_and_time"
+    ],
+    "temporal_specification": "Not finalized; requires discussion before fitting a temporal variant.",
+    "metrics": [
+      "log_loss",
+      "brier",
+      "calibration",
+      "accuracy",
+      "games",
+      "series",
+      "same_region_and_cross_region_breakdowns"
+    ],
+    "uncertainty": "Do not treat games from the same series as independent replicates for confidence intervals. Model posterior uncertainty is distinct from evaluation sampling uncertainty.",
+    "prospective_evaluation": "The frozen post-draw Worlds 2026 Swiss forecast is evaluated separately once outcomes occur, without updating its initial predictions."
+  },
+  "folds": [
+    {
+      "id": "fst_2026",
+      "fit_before_utc": "2026-03-16T00:00:00+00:00",
+      "candidate_training_games": 1108,
+      "candidate_training_series": 465,
+      "training_games_with_pending_scope_review": 52,
+      "training_region_labels": [
+        "Asia Pacific",
+        "Brazil",
+        "China",
+        "EMEA",
+        "Korea",
+        "LTA North",
+        "LTA South",
+        "Latin America",
+        "North America",
+        "PCS ecosystem",
+        "Vietnam"
+      ],
+      "evaluation_games": 45,
+      "evaluation_series": 13,
+      "evaluation_cross_region_games": 42,
+      "known_partial_evaluation_games_excluded": 0,
+      "boundary_purged_games": 0,
+      "latest_training_availability": "2026-03-08T13:38:16+00:00"
+    },
+    {
+      "id": "msi_2026",
+      "fit_before_utc": "2026-06-28T00:00:00+00:00",
+      "candidate_training_games": 2242,
+      "candidate_training_series": 900,
+      "training_games_with_pending_scope_review": 52,
+      "training_region_labels": [
+        "Asia Pacific",
+        "Brazil",
+        "China",
+        "EMEA",
+        "Korea",
+        "LTA North",
+        "LTA South",
+        "Latin America",
+        "North America",
+        "PCS ecosystem",
+        "Vietnam"
+      ],
+      "evaluation_games": 71,
+      "evaluation_series": 20,
+      "evaluation_cross_region_games": 71,
+      "known_partial_evaluation_games_excluded": 0,
+      "boundary_purged_games": 0,
+      "latest_training_availability": "2026-06-14T23:59:56+00:00"
+    },
+    {
+      "id": "ewc_2026",
+      "fit_before_utc": "2026-07-15T00:00:00+00:00",
+      "candidate_training_games": 2313,
+      "candidate_training_series": 920,
+      "training_games_with_pending_scope_review": 52,
+      "training_region_labels": [
+        "Asia Pacific",
+        "Brazil",
+        "China",
+        "EMEA",
+        "Korea",
+        "LTA North",
+        "LTA South",
+        "Latin America",
+        "North America",
+        "PCS ecosystem",
+        "Vietnam"
+      ],
+      "evaluation_games": 51,
+      "evaluation_series": 28,
+      "evaluation_cross_region_games": 43,
+      "known_partial_evaluation_games_excluded": 0,
+      "boundary_purged_games": 0,
+      "latest_training_availability": "2026-07-12T12:47:46+00:00"
+    }
+  ],
+  "pending_audit_reviews": [
+    "Event-scope reviews remain: {'window_corroboration_pending': 52, 'pending_primary_event_confirmation': 12}",
+    "Cross-season region transitions and historical team priors are not yet specified or fitted.",
+    "Forecast boundary is chosen; announcement timestamp is decoded from its URL, not independently retrieved.",
+    "Publication timing and source UTC/seconds conventions are not verified."
+  ],
+  "limitations": [
+    "Candidate training sets are for inspection; open event/identity/model-bridge reviews must be resolved before fitting.",
+    "No probabilities were fitted or scored; this report contains sample counts and membership only.",
+    "Historical 2026 outcomes were already inspected in diagnostics, so these are development backtests, not pristine research holdouts.",
+    "Within each future fit, priors, decay, feature construction, and preprocessing must use training records only.",
+    "Models stay frozen through each event; no within-event result updates are allowed by this protocol.",
+    "Publication delay is assumed and series groups are provisional; those limitations persist in this plan."
+  ],
+  "fold_membership_sha256": "1920d831c77f7558858bdcda92926414192996d748fdfa3b1bbf55effd785e80"
+}

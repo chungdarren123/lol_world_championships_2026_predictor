@@ -1,0 +1,631 @@
+{
+  "status": "diagnostic_fit_sampling_passed",
+  "forecast_ready": false,
+  "config": {
+    "model": "static_region_team_bradley_terry_v1",
+    "sampler": "numpyro",
+    "max_tree_depth": 10,
+    "region_scale_prior": 2.0,
+    "team_scale_prior": 2.0,
+    "draws": 1000,
+    "tune": 1000,
+    "chains": 4,
+    "target_accept": 0.95,
+    "seed": 20261018,
+    "prior_draws": 1000,
+    "result_delay_minutes": 60,
+    "diagnostic_limits": {
+      "max_rhat": 1.01,
+      "min_bulk_ess": 400,
+      "min_tail_ess": 400,
+      "min_bfmi": 0.3,
+      "max_divergences": 0
+    },
+    "prior_multiplier": 2.0
+  },
+  "provenance": {
+    "dataset_manifest_sha256": "ac2f61dc057d251fa3374e97e24458d6d8ec83bafafd2940af3f3da7613ebaf6",
+    "input_sha256": {
+      "games.csv": "684d240ebff4edd99dff0ee9d19e22f30fb11d2c609a706c7d2d3ade9f05739b",
+      "team_games.csv": "35873c6ad6de30877339a0211b18df4337ec06ea4f21d16c6864255e039ed929",
+      "teams.csv": "1decbb551649a332f6db8d21767dc0cd04137dafaf0c8dd2200fd9f27e638ac4"
+    },
+    "raw_source": {
+      "file_name": "2026_LoL_esports_match_data_from_OraclesElixir.csv",
+      "bytes": 78007452,
+      "sha256": "68bb4fd24bc7bfd643f0aba476ed6ad98e17a4812135cbf405295ba0f64c79d0",
+      "source_url": null,
+      "retrieved_at_utc": null,
+      "audited_at_utc": "2026-10-17T22:38:46.162336+00:00",
+      "availability_caveat": "Match timestamps do not prove data was published before the cutoff. A later download may contain backfills or corrections."
+    },
+    "selection_config": {
+      "season": 2026,
+      "cutoff_utc": "2026-10-15T18:00:00Z",
+      "cutoff_basis": "Scheduled first Play-In start; conservative forecast freeze, not a verified actual game-server start.",
+      "cutoff_source": "https://lolesports.com/en-GB/news/worlds-2026-primer",
+      "naive_timestamp_timezone": "UTC",
+      "timestamp_timezone_verified": false,
+      "duration_unit": "seconds",
+      "duration_unit_verified": false,
+      "retention_policy": {
+        "missing_timed_statistics": "Retain games and preserve missing values; do not replace with zero or impute in the audit.",
+        "lineup_changes": "Retain games and track the lineup actually used."
+      },
+      "season_exceptions": [
+        {
+          "id": "LCS_2027_promotion_played_2026",
+          "league": "LCS",
+          "source_season": 2027,
+          "start_utc": "2026-10-05T00:00:00Z",
+          "end_utc_exclusive": "2026-10-14T00:00:00Z",
+          "split": "",
+          "playoffs": "0",
+          "source": "https://lolesports.com/en-US/news/lcs-promotion-tournament-wsci"
+        },
+        {
+          "id": "CBLOL_2027_promotion_played_2026",
+          "league": "CBLOL",
+          "source_season": 2027,
+          "start_utc": "2026-09-28T00:00:00Z",
+          "end_utc_exclusive": "2026-10-14T00:00:00Z",
+          "split": "",
+          "playoffs": "0",
+          "source": "https://lolesports.com/pt-BR/lolesports/news/torneio-de-promoo-ao-cblol-wsci"
+        }
+      ],
+      "leagues": {
+        "LCK": {
+          "aliases": [
+            "LCK"
+          ],
+          "region": "Korea"
+        },
+        "LPL": {
+          "aliases": [
+            "LPL"
+          ],
+          "region": "China"
+        },
+        "LEC": {
+          "aliases": [
+            "LEC"
+          ],
+          "region": "EMEA"
+        },
+        "LCS": {
+          "aliases": [
+            "LCS"
+          ],
+          "region": "North America"
+        },
+        "LCP": {
+          "aliases": [
+            "LCP"
+          ],
+          "region": "Asia Pacific"
+        },
+        "CBLOL": {
+          "aliases": [
+            "CBLOL",
+            "CBLoL"
+          ],
+          "region": "Brazil"
+        },
+        "First Stand": {
+          "aliases": [
+            "FST",
+            "First Stand",
+            "First Stand Tournament"
+          ],
+          "region": null
+        },
+        "MSI": {
+          "aliases": [
+            "MSI"
+          ],
+          "region": null
+        },
+        "EWC": {
+          "aliases": [
+            "EWC"
+          ],
+          "region": null,
+          "stage_windows": [
+            {
+              "stage": "qualifiers",
+              "start_utc": "2026-01-01T00:00:00Z",
+              "end_utc_exclusive": "2026-07-15T00:00:00Z"
+            },
+            {
+              "stage": "main_event",
+              "start_utc": "2026-07-15T00:00:00Z",
+              "end_utc_exclusive": "2026-07-20T00:00:00Z"
+            }
+          ],
+          "stage_note": "Date-based classification for this source; source playoffs flag alone does not define event stage. Other dates remain explicitly unclassified.",
+          "source": "https://ewc-web.prod.esf-systems.com/en/competitions/2026/league-of-legends"
+        }
+      },
+      "worlds_aliases": [
+        "WLDs",
+        "WCS",
+        "Worlds",
+        "World Championship",
+        "Worlds 2026",
+        "2026 World Championship"
+      ],
+      "scope_note": "Reviewed regional/international allowlist including EWC main event and qualifiers. Retain missing timed stats and lineup changes. Include the approved LCS/CBLOL 2027 promotion events played in 2026 as explicit exceptions, preserving source season. Unknown labels remain held for review. Presence does not prove complete coverage."
+    },
+    "excluded": {},
+    "input_games": 2772
+  },
+  "coverage": {
+    "games": 2772,
+    "series": 1079,
+    "teams": 70,
+    "regions": 6,
+    "matchup_pairs": 331,
+    "cross_region_games": 156,
+    "cross_region_links": [
+      {
+        "region_a": "Asia Pacific",
+        "region_b": "China",
+        "games": 4
+      },
+      {
+        "region_a": "Asia Pacific",
+        "region_b": "EMEA",
+        "games": 12
+      },
+      {
+        "region_a": "Asia Pacific",
+        "region_b": "Korea",
+        "games": 9
+      },
+      {
+        "region_a": "Asia Pacific",
+        "region_b": "North America",
+        "games": 7
+      },
+      {
+        "region_a": "Brazil",
+        "region_b": "China",
+        "games": 5
+      },
+      {
+        "region_a": "Brazil",
+        "region_b": "EMEA",
+        "games": 1
+      },
+      {
+        "region_a": "Brazil",
+        "region_b": "Korea",
+        "games": 6
+      },
+      {
+        "region_a": "Brazil",
+        "region_b": "North America",
+        "games": 10
+      },
+      {
+        "region_a": "China",
+        "region_b": "EMEA",
+        "games": 16
+      },
+      {
+        "region_a": "China",
+        "region_b": "Korea",
+        "games": 30
+      },
+      {
+        "region_a": "China",
+        "region_b": "North America",
+        "games": 8
+      },
+      {
+        "region_a": "EMEA",
+        "region_b": "Korea",
+        "games": 25
+      },
+      {
+        "region_a": "EMEA",
+        "region_b": "North America",
+        "games": 8
+      },
+      {
+        "region_a": "Korea",
+        "region_b": "North America",
+        "games": 15
+      }
+    ],
+    "region_components": [
+      [
+        "Asia Pacific",
+        "Brazil",
+        "China",
+        "EMEA",
+        "Korea",
+        "North America"
+      ]
+    ],
+    "team_component_sizes": [
+      70
+    ]
+  },
+  "sampling": {
+    "passed": true,
+    "checks": {
+      "finite_diagnostics": true,
+      "rhat": true,
+      "bulk_ess": true,
+      "tail_ess": true,
+      "bfmi": true,
+      "divergences": true,
+      "tree_depth": true
+    },
+    "max_rhat": 1.0041139649936623,
+    "min_bulk_ess": 762.3092741010109,
+    "min_tail_ess": 1218.964300070724,
+    "bfmi_by_chain": [
+      0.7192987651280113,
+      0.6610953661919914,
+      0.6552832137978154,
+      0.6100545683328202
+    ],
+    "divergences": 0,
+    "fixed_parameters_omitted": 0,
+    "limits": {
+      "max_rhat": 1.01,
+      "min_bulk_ess": 400,
+      "min_tail_ess": 400,
+      "min_bfmi": 0.3,
+      "max_divergences": 0
+    }
+  },
+  "region_summaries": [
+    {
+      "region": "Asia Pacific",
+      "mean": -1.1772444998471292,
+      "sd": 0.39909641336374246,
+      "q05": -1.8372886147898833,
+      "q95": -0.5491467334774147
+    },
+    {
+      "region": "Brazil",
+      "mean": -0.8801903720263335,
+      "sd": 0.4612714857864505,
+      "q05": -1.6755298164221388,
+      "q95": -0.15564711516010415
+    },
+    {
+      "region": "China",
+      "mean": 0.859949019604694,
+      "sd": 0.27220117396013,
+      "q05": 0.4173197862329467,
+      "q95": 1.2997352319616935
+    },
+    {
+      "region": "EMEA",
+      "mean": -0.04464692058681446,
+      "sd": 0.2796496863738513,
+      "q05": -0.489078854178359,
+      "q95": 0.418621534005378
+    },
+    {
+      "region": "Korea",
+      "mean": 1.368267656538014,
+      "sd": 0.2565155659398362,
+      "q05": 0.956014385807171,
+      "q95": 1.792514292536422
+    },
+    {
+      "region": "North America",
+      "mean": -0.126134883682431,
+      "sd": 0.31146447437172176,
+      "q05": -0.660080609499082,
+      "q95": 0.36873157921910227
+    }
+  ],
+  "prior_predictive": {
+    "interpretation": "Equal weight per observed matchup pair; not per game.",
+    "matchup_probability": {
+      "mean": 0.49907774157667467,
+      "sd": 0.312519008463425,
+      "q05": 0.007796649281164678,
+      "q95": 0.9922122058831592
+    },
+    "fraction_below_01_or_above_99": 0.11068580060422961
+  },
+  "model_checks": {
+    "interpretation": "IN-SAMPLE checks only; not held-out performance or calibration validation. Multiple group intervals are descriptive discrepancy checks, not significance tests.",
+    "posterior_predictive_groups": {
+      "all": {
+        "games": 2772,
+        "observed_blue_win_rate": 0.5559163059163059,
+        "replicated_blue_win_rate": {
+          "mean": 0.5219206349206349,
+          "sd": 0.008922402317281352,
+          "q05": 0.5072150072150072,
+          "q95": 0.5360930735930736
+        },
+        "outside_central_90_predictive_interval": true
+      },
+      "cross_region": {
+        "games": 156,
+        "observed_blue_win_rate": 0.6346153846153846,
+        "replicated_blue_win_rate": {
+          "mean": 0.5463782051282051,
+          "sd": 0.036231149738506725,
+          "q05": 0.48685897435897435,
+          "q95": 0.6025641025641025
+        },
+        "outside_central_90_predictive_interval": true
+      },
+      "same_region": {
+        "games": 2616,
+        "observed_blue_win_rate": 0.5512232415902141,
+        "replicated_blue_win_rate": {
+          "mean": 0.5204621559633028,
+          "sd": 0.00921240466327483,
+          "q05": 0.5045871559633027,
+          "q95": 0.5355504587155964
+        },
+        "outside_central_90_predictive_interval": true
+      },
+      "CBLOL/promotion": {
+        "games": 24,
+        "observed_blue_win_rate": 0.5416666666666666,
+        "replicated_blue_win_rate": {
+          "mean": 0.5292916666666666,
+          "sd": 0.10905839892002817,
+          "q05": 0.3333333333333333,
+          "q95": 0.7083333333333334
+        },
+        "outside_central_90_predictive_interval": false
+      },
+      "CBLOL/regional_competition": {
+        "games": 275,
+        "observed_blue_win_rate": 0.5854545454545454,
+        "replicated_blue_win_rate": {
+          "mean": 0.5130690909090908,
+          "sd": 0.02755950172875392,
+          "q05": 0.4690909090909091,
+          "q95": 0.56
+        },
+        "outside_central_90_predictive_interval": true
+      },
+      "EWC/main_event": {
+        "games": 51,
+        "observed_blue_win_rate": 0.5294117647058824,
+        "replicated_blue_win_rate": {
+          "mean": 0.5017254901960785,
+          "sd": 0.05854264966727556,
+          "q05": 0.4117647058823529,
+          "q95": 0.6078431372549019
+        },
+        "outside_central_90_predictive_interval": false
+      },
+      "EWC/qualifiers": {
+        "games": 181,
+        "observed_blue_win_rate": 0.5193370165745856,
+        "replicated_blue_win_rate": {
+          "mean": 0.5156187845303868,
+          "sd": 0.03488199811678328,
+          "q05": 0.4585635359116022,
+          "q95": 0.569060773480663
+        },
+        "outside_central_90_predictive_interval": false
+      },
+      "First Stand/main_event": {
+        "games": 45,
+        "observed_blue_win_rate": 0.6666666666666666,
+        "replicated_blue_win_rate": {
+          "mean": 0.5597333333333333,
+          "sd": 0.06793117795439445,
+          "q05": 0.4444444444444444,
+          "q95": 0.6666666666666666
+        },
+        "outside_central_90_predictive_interval": false
+      },
+      "LCK/regional_competition": {
+        "games": 502,
+        "observed_blue_win_rate": 0.5637450199203188,
+        "replicated_blue_win_rate": {
+          "mean": 0.52100796812749,
+          "sd": 0.021048141333221707,
+          "q05": 0.48406374501992033,
+          "q95": 0.5518924302788843
+        },
+        "outside_central_90_predictive_interval": true
+      },
+      "LCP/regional_competition": {
+        "games": 283,
+        "observed_blue_win_rate": 0.5512367491166078,
+        "replicated_blue_win_rate": {
+          "mean": 0.5056183745583039,
+          "sd": 0.028495533072953966,
+          "q05": 0.45936395759717313,
+          "q95": 0.5512367491166078
+        },
+        "outside_central_90_predictive_interval": false
+      },
+      "LCS/promotion": {
+        "games": 23,
+        "observed_blue_win_rate": 0.782608695652174,
+        "replicated_blue_win_rate": {
+          "mean": 0.5703478260869566,
+          "sd": 0.10619805301900952,
+          "q05": 0.391304347826087,
+          "q95": 0.7391304347826086
+        },
+        "outside_central_90_predictive_interval": true
+      },
+      "LCS/regional_competition": {
+        "games": 260,
+        "observed_blue_win_rate": 0.5538461538461539,
+        "replicated_blue_win_rate": {
+          "mean": 0.5320115384615384,
+          "sd": 0.030097148177233784,
+          "q05": 0.4846153846153846,
+          "q95": 0.5846153846153846
+        },
+        "outside_central_90_predictive_interval": false
+      },
+      "LEC/regional_competition": {
+        "games": 383,
+        "observed_blue_win_rate": 0.5691906005221932,
+        "replicated_blue_win_rate": {
+          "mean": 0.5458381201044387,
+          "sd": 0.024558750622484426,
+          "q05": 0.5039164490861618,
+          "q95": 0.5849869451697127
+        },
+        "outside_central_90_predictive_interval": false
+      },
+      "LPL/regional_competition": {
+        "games": 674,
+        "observed_blue_win_rate": 0.5192878338278932,
+        "replicated_blue_win_rate": {
+          "mean": 0.5092982195845697,
+          "sd": 0.01814217400119004,
+          "q05": 0.4792284866468843,
+          "q95": 0.5370919881305638
+        },
+        "outside_central_90_predictive_interval": false
+      },
+      "MSI/main_event": {
+        "games": 71,
+        "observed_blue_win_rate": 0.6619718309859155,
+        "replicated_blue_win_rate": {
+          "mean": 0.5699154929577465,
+          "sd": 0.053629808112567734,
+          "q05": 0.4788732394366197,
+          "q95": 0.6619718309859155
+        },
+        "outside_central_90_predictive_interval": false
+      }
+    },
+    "in_sample_calibration": [
+      {
+        "lower": 0.0,
+        "upper": 0.1,
+        "games": 6,
+        "mean_probability": 0.07567545029174975,
+        "observed_rate": 0.0
+      },
+      {
+        "lower": 0.1,
+        "upper": 0.2,
+        "games": 80,
+        "mean_probability": 0.16454041694615487,
+        "observed_rate": 0.1375
+      },
+      {
+        "lower": 0.2,
+        "upper": 0.3,
+        "games": 257,
+        "mean_probability": 0.2559105895752469,
+        "observed_rate": 0.2490272373540856
+      },
+      {
+        "lower": 0.3,
+        "upper": 0.4,
+        "games": 377,
+        "mean_probability": 0.3541051009104662,
+        "observed_rate": 0.38992042440318303
+      },
+      {
+        "lower": 0.4,
+        "upper": 0.5,
+        "games": 521,
+        "mean_probability": 0.4478707401855734,
+        "observed_rate": 0.44145873320537427
+      },
+      {
+        "lower": 0.5,
+        "upper": 0.6,
+        "games": 580,
+        "mean_probability": 0.5541646251216746,
+        "observed_rate": 0.6051724137931035
+      },
+      {
+        "lower": 0.6,
+        "upper": 0.7,
+        "games": 430,
+        "mean_probability": 0.6491342698998018,
+        "observed_rate": 0.7302325581395349
+      },
+      {
+        "lower": 0.7,
+        "upper": 0.8,
+        "games": 408,
+        "mean_probability": 0.745965266728457,
+        "observed_rate": 0.7843137254901961
+      },
+      {
+        "lower": 0.8,
+        "upper": 0.9,
+        "games": 101,
+        "mean_probability": 0.8438577409637585,
+        "observed_rate": 0.9207920792079208
+      },
+      {
+        "lower": 0.9,
+        "upper": 1.0,
+        "games": 12,
+        "mean_probability": 0.9126470723359557,
+        "observed_rate": 0.9166666666666666
+      }
+    ],
+    "in_sample_log_loss": 0.6073183567262532,
+    "in_sample_brier": 0.20976303501259233,
+    "maximum_symmetry_error": 2.220446049250313e-16
+  },
+  "versions": {
+    "pymc": "5.25.1",
+    "arviz": "0.22.0",
+    "numpy": "2.3.5",
+    "pytensor": "2.31.7",
+    "scipy": "1.18.1",
+    "pandas": "3.0.6",
+    "numpyro": "0.19.0",
+    "jax": "0.7.2",
+    "jaxlib": "0.7.2"
+  },
+  "python_version": "3.12.14",
+  "limitations": [
+    "Static 2026 pre-Play-Ins diagnostic only: no time decay, historical international data, or completed Play-In games yet.",
+    "Uses the original scheduled cutoff and unverified UTC/seconds source assumptions, with an explicit assumed result delay.",
+    "Publication time and later source corrections are unknown; this is not a verified historical snapshot.",
+    "Region means describe this modeled team pool; coverage and selection of international entrants affect interpretation.",
+    "Disconnected comparisons depend on priors; graph connectivity alone does not guarantee precise regional strengths.",
+    "Team-region-season effects are constant despite roster/patch changes; lineups remain preserved in canonical tables.",
+    "Games are conditionally independent given fixed strengths. Within-series dependence and adaptation are omitted.",
+    "Known partial series contributes observed games only; no missing results or official final scores are invented.",
+    "Missing Gold/XP games are retained; those statistics and drafts are not features and no imputation is performed.",
+    "Prior and posterior predictive checks use observed fixtures; in-sample checks do not demonstrate forecasting skill.",
+    "Sampling checks assess numerical inference, not whether assumptions or predictions are correct.",
+    "A single synthetic recovery exercise is a smoke test, not simulation-based calibration across many synthetic datasets.",
+    "Region/team scale priors require sensitivity review; no test-outcome-driven parameter tuning is authorized."
+  ],
+  "model_check_warnings": [
+    "all: observed blue win rate is outside the central 90% replicated range",
+    "cross_region: observed blue win rate is outside the central 90% replicated range",
+    "same_region: observed blue win rate is outside the central 90% replicated range",
+    "CBLOL/regional_competition: observed blue win rate is outside the central 90% replicated range",
+    "LCK/regional_competition: observed blue win rate is outside the central 90% replicated range",
+    "LCS/promotion: observed blue win rate is outside the central 90% replicated range"
+  ],
+  "package_source_sha256": "fb2584c980ed60ef0da398ee0aff75f81370f81719626248d543cb0dc669c01a",
+  "artifact_sha256": {
+    "inference_trace.npz": "9ef0b3b0a2f5a6b0fe54c533acec355ff62d9ccba16e64c4d28a720232c10e95",
+    "parameter_diagnostics.csv": "abe6058cbe28d6235fb368ed171a1bafa685f29d83cc20fc9d9998fedb65208d",
+    "posterior_draws.npz": "82bb774faade7af5a442578c9f88bc763e0f8577eacc96c95efc8c55b9e26af3",
+    "posterior_metadata.json": "a8509e0b599e312fe06a80f6137498be6e47eff8ade41e394b8be6f0b1eb214f",
+    "region_intervals.png": "a6b8d318ae70827f3b046c7a8d9ab66fa4b61139a3cf3df9d21952241db642df",
+    "regions.csv": "0913389cbfc9b66faf2c9a04ef9de46a5afc73dd0536601daf724d21f20e581c",
+    "scale_traces.png": "7e49470baa316867885461c868ec5cc6074ec6ff0ae97f2ce31bac99c7a99168",
+    "teams.csv": "bd6469e3ecbc88f73cd16d0615aeca70965d8942d5407d318aac9cb82faca509"
+  }
+}

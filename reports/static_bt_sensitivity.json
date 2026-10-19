@@ -1,0 +1,151 @@
+{
+  "both_sampling_passed": true,
+  "baseline_config": {
+    "model": "static_region_team_bradley_terry_v1",
+    "sampler": "numpyro",
+    "max_tree_depth": 10,
+    "region_scale_prior": 1.0,
+    "team_scale_prior": 1.0,
+    "draws": 1000,
+    "tune": 1000,
+    "chains": 4,
+    "target_accept": 0.95,
+    "seed": 20261018,
+    "prior_draws": 1000,
+    "result_delay_minutes": 60,
+    "diagnostic_limits": {
+      "max_rhat": 1.01,
+      "min_bulk_ess": 400,
+      "min_tail_ess": 400,
+      "min_bfmi": 0.3,
+      "max_divergences": 0
+    },
+    "prior_multiplier": 1.0
+  },
+  "alternate_config": {
+    "model": "static_region_team_bradley_terry_v1",
+    "sampler": "numpyro",
+    "max_tree_depth": 10,
+    "region_scale_prior": 2.0,
+    "team_scale_prior": 2.0,
+    "draws": 1000,
+    "tune": 1000,
+    "chains": 4,
+    "target_accept": 0.95,
+    "seed": 20261018,
+    "prior_draws": 1000,
+    "result_delay_minutes": 60,
+    "diagnostic_limits": {
+      "max_rhat": 1.01,
+      "min_bulk_ess": 400,
+      "min_tail_ess": 400,
+      "min_bfmi": 0.3,
+      "max_divergences": 0
+    },
+    "prior_multiplier": 2.0
+  },
+  "region_comparison": [
+    {
+      "region": "Asia Pacific",
+      "baseline_mean": -1.1479727546152758,
+      "alternate_mean": -1.1772444998471292,
+      "mean_shift": -0.029271745231853386,
+      "baseline_q05_q95": [
+        -1.799639518938414,
+        -0.534834860464792
+      ],
+      "alternate_q05_q95": [
+        -1.8372886147898833,
+        -0.5491467334774147
+      ]
+    },
+    {
+      "region": "Brazil",
+      "baseline_mean": -0.8422394682336264,
+      "alternate_mean": -0.8801903720263335,
+      "mean_shift": -0.03795090379270716,
+      "baseline_q05_q95": [
+        -1.5896258949247217,
+        -0.1443490060296043
+      ],
+      "alternate_q05_q95": [
+        -1.6755298164221388,
+        -0.15564711516010415
+      ]
+    },
+    {
+      "region": "China",
+      "baseline_mean": 0.8351474670906202,
+      "alternate_mean": 0.859949019604694,
+      "mean_shift": 0.0248015525140739,
+      "baseline_q05_q95": [
+        0.3931859974975825,
+        1.2965052635657197
+      ],
+      "alternate_q05_q95": [
+        0.4173197862329467,
+        1.2997352319616935
+      ]
+    },
+    {
+      "region": "EMEA",
+      "baseline_mean": -0.06674480778667037,
+      "alternate_mean": -0.04464692058681446,
+      "mean_shift": 0.022097887199855913,
+      "baseline_q05_q95": [
+        -0.5247486152210623,
+        0.39368623087338145
+      ],
+      "alternate_q05_q95": [
+        -0.489078854178359,
+        0.418621534005378
+      ]
+    },
+    {
+      "region": "Korea",
+      "baseline_mean": 1.347834084887866,
+      "alternate_mean": 1.368267656538014,
+      "mean_shift": 0.02043357165014803,
+      "baseline_q05_q95": [
+        0.9353528786712696,
+        1.771977868032269
+      ],
+      "alternate_q05_q95": [
+        0.956014385807171,
+        1.792514292536422
+      ]
+    },
+    {
+      "region": "North America",
+      "baseline_mean": -0.1260245213429133,
+      "alternate_mean": -0.126134883682431,
+      "mean_shift": -0.00011036233951769447,
+      "baseline_q05_q95": [
+        -0.6310912259410285,
+        0.3831083602156873
+      ],
+      "alternate_q05_q95": [
+        -0.660080609499082,
+        0.36873157921910227
+      ]
+    }
+  ],
+  "matchup_pairs_compared": 2415,
+  "mean_absolute_probability_shift": 0.004046380021420292,
+  "largest_shift": {
+    "team_a": [
+      "oe:team:1c81857b6ce6a3c1cd9220fd97e077f",
+      2026,
+      "Brazil"
+    ],
+    "team_b": [
+      "oe:team:75760dca486d4682426196b76bd1a54",
+      2026,
+      "EMEA"
+    ],
+    "baseline_probability": 0.4559897858858633,
+    "alternate_probability": 0.4381030806129853,
+    "absolute_shift": 0.017886705272878
+  },
+  "interpretation": "One prior perturbation, with Monte Carlo noise in each fit. This is not a forecast-accuracy comparison, exhaustive robustness test, or model selection rule."
+}

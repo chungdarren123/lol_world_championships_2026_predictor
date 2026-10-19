@@ -1,0 +1,580 @@
+{
+  "status": "audited_with_open_reviews",
+  "training_ready": false,
+  "forecast_scope": {
+    "schema_version": 1,
+    "forecast_freeze_utc": "2026-10-19T00:00:00Z",
+    "freeze_basis": "Chosen post-draw reporting boundary, not an asserted exact draw-completion time. The official announcement URL's X snowflake decodes to 2026-10-18T20:31:22.645Z; direct timestamp/content retrieval was unavailable. Historical publication availability remains unverified.",
+    "draw_source": "https://lolesports.com/en-AU/tournament/115660540725177488/stage/115660540725570706",
+    "draw_verification": "Opening pairings match the official Swiss bracket inspected on 2026-10-19; that page is not an archived pre-freeze snapshot.",
+    "announcement_source": "https://x.com/lolesports/status/2111918080737862133",
+    "announcement_id": "2111918080737862133",
+    "announcement_time_independently_verified": false,
+    "swiss_first_scheduled_start_utc": "2026-10-23T17:00:00Z",
+    "schedule_source": "https://lolesports.com/en-GB/news/worlds-2026-primer",
+    "source_timezone": "UTC",
+    "source_timezone_verified": false,
+    "duration_unit": "seconds",
+    "duration_unit_verified": false,
+    "assumed_result_delay_minutes": 60,
+    "sources": {
+      "2024": "data/raw/2024_LoL_esports_match_data_from_OraclesElixir.csv",
+      "2025": "data/raw/2025_LoL_esports_match_data_from_OraclesElixir.csv",
+      "2026": "data/raw/2026_LoL_esports_match_data_from_OraclesElixir.csv"
+    },
+    "historical_events": [
+      {
+        "year": 2024,
+        "league": "MSI",
+        "event": "MSI",
+        "start": "2024-05-01T00:00:00Z",
+        "end": "2024-05-20T00:00:00Z",
+        "source": "https://lolesports.com/en-AU/news/msi-2024-primer"
+      },
+      {
+        "year": 2024,
+        "league": "EWC",
+        "event": "EWC",
+        "start": "2024-07-04T00:00:00Z",
+        "end": "2024-07-08T00:00:00Z",
+        "source": null
+      },
+      {
+        "year": 2024,
+        "league": "WLDs",
+        "event": "Worlds",
+        "start": "2024-09-25T00:00:00Z",
+        "end": "2024-11-03T00:00:00Z",
+        "source": "https://lolesports.com/en-GB/news/the-state-of-the-game-lol-esports-in-2024"
+      },
+      {
+        "year": 2025,
+        "league": "FST",
+        "event": "First Stand",
+        "start": "2025-03-10T00:00:00Z",
+        "end": "2025-03-17T00:00:00Z",
+        "source": "https://lolesports.com/en-GB/news/fst-2025-primer"
+      },
+      {
+        "year": 2025,
+        "league": "MSI",
+        "event": "MSI",
+        "start": "2025-06-27T00:00:00Z",
+        "end": "2025-07-14T00:00:00Z",
+        "source": "https://lolesports.com/en-GB/news/announcing-the-msi-2025-venue"
+      },
+      {
+        "year": 2025,
+        "league": "EWC",
+        "event": "EWC",
+        "start": "2025-07-16T00:00:00Z",
+        "end": "2025-07-21T00:00:00Z",
+        "source": null
+      },
+      {
+        "year": 2025,
+        "league": "WLDs",
+        "event": "Worlds",
+        "start": "2025-10-14T00:00:00Z",
+        "end": "2025-11-10T00:00:00Z",
+        "source": "https://lolesports.com/en-GB/news/worlds-2025-primer"
+      }
+    ],
+    "historical_window_note": "UTC screening windows, not exact event start/finish timestamps. MSI 2025 includes the UTC July 13 finish of the July 12 Vancouver session. Null source entries remain organizer-corroboration tasks, never verified coverage claims.",
+    "membership_leagues": {
+      "2024": {
+        "LCK": "Korea",
+        "LPL": "China",
+        "LEC": "EMEA",
+        "LCS": "North America",
+        "CBLOL": "Brazil",
+        "LLA": "Latin America",
+        "PCS": "PCS ecosystem",
+        "LJL": "PCS ecosystem",
+        "LCO": "PCS ecosystem",
+        "VCS": "Vietnam"
+      },
+      "2025": {
+        "LCK": "Korea",
+        "LPL": "China",
+        "LEC": "EMEA",
+        "LCP": "Asia Pacific",
+        "LTA N": "LTA North",
+        "LTA S": "LTA South"
+      },
+      "2026": {
+        "LCK": "Korea",
+        "LPL": "China",
+        "LEC": "EMEA",
+        "LCS": "North America",
+        "CBLOL": "Brazil",
+        "LCP": "Asia Pacific",
+        "LFL": "EMEA"
+      }
+    },
+    "membership_policy": "Read dated provider team-ID participation only from these regional leagues, without importing out-of-pool outcomes or performance. Use same played year and observations at or before each candidate game. Historical effects remain year-specific; no cross-year region bridge is implemented.",
+    "membership_sources": [
+      "https://lolesports.com/en-PH/news/pacific-championship-series-2024-spring-split-kicks-off-on-19-jan",
+      "https://lolesports.com/ja-JP/news/pcs-2024-summer-playoffs",
+      "https://lolesports.com/en-US/news/introducing-league-of-legends-championship-of-the-americas",
+      "https://lolesports.com/en-AU/news/league-of-"
+    ],
+    "play_in": {
+      "start": "2026-10-15T00:00:00Z",
+      "end": "2026-10-19T00:00:00Z",
+      "expected_series": 6,
+      "team_names": [
+        "Karmine Corp",
+        "Cloud9",
+        "MVK Esports",
+        "FURIA"
+      ],
+      "source": "https://cdn.sanity.io/files/dsfx7636/news_live/faa5ce974e58615911fbee931c6123e2785a8b46.pdf"
+    },
+    "regional_qualifier_review": {
+      "source_league": "WLDs",
+      "start": "2026-09-17T00:00:00Z",
+      "end": "2026-09-20T00:00:00Z",
+      "source_match_ids": [
+        "13506",
+        "13507",
+        "13508"
+      ],
+      "candidate_event": "LPL",
+      "candidate_stage": "regional_qualifier",
+      "review_status": "pending_primary_event_confirmation",
+      "note": "Provider IDs/URLs and dated domestic participants identify 12 likely regional-final games excluded by the original blanket WLDs rule. Inventory separately; do not silently include them in training."
+    },
+    "round_one": [
+      [
+        "GEN",
+        "IG"
+      ],
+      [
+        "TLAW",
+        "CFO"
+      ],
+      [
+        "AL",
+        "KC"
+      ],
+      [
+        "G2",
+        "DK"
+      ],
+      [
+        "HLE",
+        "TES"
+      ],
+      [
+        "LOS",
+        "T1"
+      ],
+      [
+        "TSW",
+        "LYON"
+      ],
+      [
+        "BLG",
+        "MKOI"
+      ]
+    ]
+  },
+  "base_selection_config": {
+    "season": 2026,
+    "cutoff_utc": "2026-10-19T00:00:00Z",
+    "cutoff_basis": "Scheduled first Play-In start; conservative forecast freeze, not a verified actual game-server start.",
+    "cutoff_source": "https://lolesports.com/en-GB/news/worlds-2026-primer",
+    "naive_timestamp_timezone": "UTC",
+    "timestamp_timezone_verified": false,
+    "duration_unit": "seconds",
+    "duration_unit_verified": false,
+    "retention_policy": {
+      "missing_timed_statistics": "Retain games and preserve missing values; do not replace with zero or impute in the audit.",
+      "lineup_changes": "Retain games and track the lineup actually used."
+    },
+    "season_exceptions": [
+      {
+        "id": "LCS_2027_promotion_played_2026",
+        "league": "LCS",
+        "source_season": 2027,
+        "start_utc": "2026-10-05T00:00:00Z",
+        "end_utc_exclusive": "2026-10-14T00:00:00Z",
+        "split": "",
+        "playoffs": "0",
+        "source": "https://lolesports.com/en-US/news/lcs-promotion-tournament-wsci"
+      },
+      {
+        "id": "CBLOL_2027_promotion_played_2026",
+        "league": "CBLOL",
+        "source_season": 2027,
+        "start_utc": "2026-09-28T00:00:00Z",
+        "end_utc_exclusive": "2026-10-14T00:00:00Z",
+        "split": "",
+        "playoffs": "0",
+        "source": "https://lolesports.com/pt-BR/lolesports/news/torneio-de-promoo-ao-cblol-wsci"
+      }
+    ],
+    "leagues": {
+      "LCK": {
+        "aliases": [
+          "LCK"
+        ],
+        "region": "Korea"
+      },
+      "LPL": {
+        "aliases": [
+          "LPL"
+        ],
+        "region": "China"
+      },
+      "LEC": {
+        "aliases": [
+          "LEC"
+        ],
+        "region": "EMEA"
+      },
+      "LCS": {
+        "aliases": [
+          "LCS"
+        ],
+        "region": "North America"
+      },
+      "LCP": {
+        "aliases": [
+          "LCP"
+        ],
+        "region": "Asia Pacific"
+      },
+      "CBLOL": {
+        "aliases": [
+          "CBLOL",
+          "CBLoL"
+        ],
+        "region": "Brazil"
+      },
+      "First Stand": {
+        "aliases": [
+          "FST",
+          "First Stand",
+          "First Stand Tournament"
+        ],
+        "region": null
+      },
+      "MSI": {
+        "aliases": [
+          "MSI"
+        ],
+        "region": null
+      },
+      "EWC": {
+        "aliases": [
+          "EWC"
+        ],
+        "region": null,
+        "stage_windows": [
+          {
+            "stage": "qualifiers",
+            "start_utc": "2026-01-01T00:00:00Z",
+            "end_utc_exclusive": "2026-07-15T00:00:00Z"
+          },
+          {
+            "stage": "main_event",
+            "start_utc": "2026-07-15T00:00:00Z",
+            "end_utc_exclusive": "2026-07-20T00:00:00Z"
+          }
+        ],
+        "stage_note": "Date-based classification for this source; source playoffs flag alone does not define event stage. Other dates remain explicitly unclassified.",
+        "source": "https://ewc-web.prod.esf-systems.com/en/competitions/2026/league-of-legends"
+      }
+    },
+    "worlds_aliases": [
+      "WLDs",
+      "WCS",
+      "Worlds",
+      "World Championship",
+      "Worlds 2026",
+      "2026 World Championship"
+    ],
+    "scope_note": "Reviewed regional/international allowlist including EWC main event and qualifiers. Retain missing timed stats and lineup changes. Include the approved LCS/CBLOL 2027 promotion events played in 2026 as explicit exceptions, preserving source season. Unknown labels remain held for review. Presence does not prove complete coverage."
+  },
+  "identity_config": {
+    "policy": "Preserve provider IDs except for explicitly reviewed, dated aliases. Regions describe competitive ecosystems, not player nationalities. Region evidence must be observed at or before each game; out-of-pool membership metadata supplies no outcomes or performance features.",
+    "team_aliases": [
+      {
+        "source_team_id": "oe:team:ee140e8e9d6abd0bfd2b7bc94639d43",
+        "canonical_team_id": "oe:team:740de582f50775c516c77ed7b923fd5",
+        "canonical_name": "Team Secret Whales",
+        "source_leagues": [
+          "EWC"
+        ],
+        "valid_from_utc": "2026-05-20T00:00:00Z",
+        "valid_until_utc_exclusive": "2026-07-20T00:00:00Z",
+        "evidence": "Organizer identifies Team Secret as the LCP representative. Source EWC Team Secret and LCP Team Secret Whales share Pun, Hizto, Dire, Eddie and Bie with identical player IDs before and during the event. This is a retrospective identity correction, not a future performance feature.",
+        "source_url": "https://ewc-web.prod.esf-systems.com/en/competitions/2026/league-of-legends"
+      }
+    ],
+    "additional_region_metadata_leagues": {
+      "LFL": {
+        "region": "EMEA",
+        "evidence": "Use pre-cutoff 2026 source participation metadata to identify EWC qualifier entrants Galions and Solary. Do not import LFL outcomes or statistics into the clean game pool.",
+        "source_url": "https://www.youtube.com/watch?v=Gdw3PAy4VZI"
+      }
+    },
+    "series": {
+      "maximum_continuation_gap_hours": 6,
+      "policy": "Prefer shared source match references. Otherwise group consecutive game numbers for the same teams and competition context. A new game 1 always starts a new series. Inferred groups remain provisional; never infer best-of or completion from observed score.",
+      "overrides": [
+        {
+          "series_reference": "LCK:2026-08-01:GenG-DplusKia",
+          "game_ids": [
+            "game:4606cb664c95d28060d06c67"
+          ],
+          "evidence_url": "https://gol.gg/game/stats/80675/page-summary/",
+          "best_of": 3,
+          "known_missing_game_numbers": [
+            1
+          ],
+          "note": "Source CSV contains only game 2 (LOLTMNT02_444730) for this matchup/date. The provider's game-1 page and BO3 summary establish the missing observation and series identity. Do not import an external winner, fabricate player/game records, or claim the observed score is final."
+        }
+      ]
+    }
+  },
+  "announcement_time_derived_from_id_utc": "2026-10-18T20:31:22.645000+00:00",
+  "sources": {
+    "2024": {
+      "source": {
+        "file_name": "2024_LoL_esports_match_data_from_OraclesElixir.csv",
+        "bytes": 79204928,
+        "sha256": "a2c67680a53c73622cc974db4f534e49e44cc11dab2e5fd5ecfae421f772d865",
+        "source_url": null,
+        "retrieved_at_utc": null,
+        "audited_at_utc": "2026-10-19T14:33:14.272171+00:00",
+        "availability_caveat": "Match timestamps do not prove data was published before the cutoff. A later download may contain backfills or corrections."
+      },
+      "source_games_with_team_rows": 10204,
+      "malformed_rows": 0,
+      "selected_game_keys": 203,
+      "historical_worlds_label_outside_event_window": 26,
+      "excluded": {
+        "outside_historical_international_windows": 10001
+      }
+    },
+    "2025": {
+      "source": {
+        "file_name": "2025_LoL_esports_match_data_from_OraclesElixir.csv",
+        "bytes": 79186324,
+        "sha256": "882245414e94e13a9c70f14ed1047a36bffe2279f29526bffe884130d4aaf592",
+        "source_url": null,
+        "retrieved_at_utc": null,
+        "audited_at_utc": "2026-10-19T14:33:23.789675+00:00",
+        "availability_caveat": "Match timestamps do not prove data was published before the cutoff. A later download may contain backfills or corrections."
+      },
+      "source_games_with_team_rows": 10044,
+      "malformed_rows": 0,
+      "selected_game_keys": 232,
+      "historical_worlds_label_outside_event_window": 12,
+      "excluded": {
+        "outside_historical_international_windows": 9812
+      }
+    },
+    "2026": {
+      "source": {
+        "file_name": "2026_LoL_esports_match_data_from_OraclesElixir.csv",
+        "bytes": 78256688,
+        "sha256": "86414222c2e9849b4d9efaec19c4be3f8db0a88f9d89fbf2999645e9fd53f9f1",
+        "source_url": null,
+        "retrieved_at_utc": null,
+        "audited_at_utc": "2026-10-19T14:33:32.696467+00:00",
+        "availability_caveat": "Match timestamps do not prove data was published before the cutoff. A later download may contain backfills or corrections."
+      },
+      "source_games_with_team_rows": 9753,
+      "malformed_rows": 0,
+      "selected_game_keys": 2806,
+      "historical_worlds_label_outside_event_window": 0,
+      "excluded": {
+        "not_in_approved_current_pool": 6947
+      }
+    }
+  },
+  "errors": [],
+  "open_reviews": [
+    "Event-scope reviews remain: {'window_corroboration_pending': 52, 'pending_primary_event_confirmation': 12}",
+    "Cross-season region transitions and historical team priors are not yet specified or fitted.",
+    "Forecast boundary is chosen; announcement timestamp is decoded from its URL, not independently retrieved.",
+    "Publication timing and source UTC/seconds conventions are not verified."
+  ],
+  "candidate_games": 3241,
+  "candidate_series": 1260,
+  "counts_by_event": {
+    "2024/MSI/all_event_stages": 78,
+    "2024/EWC/main_event": 19,
+    "2024/Worlds/all_event_stages": 106,
+    "2025/First Stand/main_event": 35,
+    "2025/MSI/all_event_stages": 80,
+    "2025/EWC/main_event": 33,
+    "2025/Worlds/all_event_stages": 84,
+    "2026/LCK/regional_competition": 502,
+    "2026/LPL/regional_competition": 674,
+    "2026/LCP/regional_competition": 283,
+    "2026/LEC/regional_competition": 383,
+    "2026/CBLOL/regional_competition": 275,
+    "2026/LCS/regional_competition": 260,
+    "2026/First Stand/main_event": 45,
+    "2026/EWC/qualifiers": 181,
+    "2026/MSI/main_event": 71,
+    "2026/EWC/main_event": 51,
+    "2026/LPL/regional_qualifier": 12,
+    "2026/CBLOL/promotion": 24,
+    "2026/LCS/promotion": 23,
+    "2026/Worlds/play_in": 22
+  },
+  "candidate_region_labels": [
+    "Asia Pacific",
+    "Brazil",
+    "China",
+    "EMEA",
+    "Korea",
+    "LTA North",
+    "LTA South",
+    "Latin America",
+    "North America",
+    "PCS ecosystem",
+    "Vietnam"
+  ],
+  "play_in_games": 22,
+  "play_in_series_groups": 6,
+  "play_in_observed_sequence_checks": [
+    {
+      "series_id": "series:448b52d4fa4ce35856236b33",
+      "observed_game_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "observed_wins": {
+        "oe:team:fc8e90107dabb9a35c490b0d86adea0": 2,
+        "oe:team:f3aa9bbd924ce3af42ac53f8326bc7c": 3
+      },
+      "consistent_with_bo5": true,
+      "official_final_score_verified": false
+    },
+    {
+      "series_id": "series:44d654fe5bb4a14070807d8e",
+      "observed_game_numbers": [
+        1,
+        2,
+        3
+      ],
+      "observed_wins": {
+        "oe:team:bc3824b0bbb8139d16109178faa4822": 3
+      },
+      "consistent_with_bo5": true,
+      "official_final_score_verified": false
+    },
+    {
+      "series_id": "series:178003c73af6fffd7df9699c",
+      "observed_game_numbers": [
+        1,
+        2,
+        3
+      ],
+      "observed_wins": {
+        "oe:team:f3aa9bbd924ce3af42ac53f8326bc7c": 3
+      },
+      "consistent_with_bo5": true,
+      "official_final_score_verified": false
+    },
+    {
+      "series_id": "series:ab83d658be138c539ca3f06d",
+      "observed_game_numbers": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "observed_wins": {
+        "oe:team:fc8e90107dabb9a35c490b0d86adea0": 1,
+        "oe:team:87e3e1e75839f75a10bbc66e894d806": 3
+      },
+      "consistent_with_bo5": true,
+      "official_final_score_verified": false
+    },
+    {
+      "series_id": "series:4a6f8bcf12b19deb9bae9a78",
+      "observed_game_numbers": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "observed_wins": {
+        "oe:team:bc3824b0bbb8139d16109178faa4822": 3,
+        "oe:team:87e3e1e75839f75a10bbc66e894d806": 1
+      },
+      "consistent_with_bo5": true,
+      "official_final_score_verified": false
+    },
+    {
+      "series_id": "series:0a9098e36acc4bb1cf4271f2",
+      "observed_game_numbers": [
+        1,
+        2,
+        3
+      ],
+      "observed_wins": {
+        "oe:team:f3aa9bbd924ce3af42ac53f8326bc7c": 3
+      },
+      "consistent_with_bo5": true,
+      "official_final_score_verified": false
+    }
+  ],
+  "unresolved_region_games": [],
+  "scope_review_counts": {
+    "window_corroboration_pending": 52,
+    "pending_primary_event_confirmation": 12
+  },
+  "exclusions_after_selection": {},
+  "series_issues": [
+    {
+      "series_id": "series:0f1a237c20f4dffc157d31f6",
+      "issue": "known_missing_game_numbers:1"
+    }
+  ],
+  "limitations": [
+    "Candidate inventory is not a canonical training export; existing model loaders must not consume it as one.",
+    "Source paths, bytes, and checksums are observed; download URLs and retrieval timestamps remain unknown.",
+    "Source league WLDs contains regional qualifiers as well as Worlds; explicit date/ID rules are required.",
+    "All eligible games retain their actual ten player IDs; no missing performance statistics are imputed or used.",
+    "Historical regional rows supply membership metadata only; their outcomes and performance are not imported.",
+    "Historical region labels are not silently mapped to 2026 successors. A model bridge is a separate choice.",
+    "Six inferred Play-In groups and structurally complete rows do not independently prove full official event coverage.",
+    "Complete event coverage requires reconciliation against official fixtures, beyond file-level counts."
+  ],
+  "package_source_sha256": "c517d09028c4508ce3378e17040a46d8e366a5975d7c0f9d44563b2338e66f21",
+  "previous_2026_source_sha256": "68bb4fd24bc7bfd643f0aba476ed6ad98e17a4812135cbf405295ba0f64c79d0",
+  "current_2026_source_changed": true,
+  "previous_pool_reconciliation": {
+    "old_source_sha256": "68bb4fd24bc7bfd643f0aba476ed6ad98e17a4812135cbf405295ba0f64c79d0",
+    "old_games": 2772,
+    "current_existing_scope_games": 2772,
+    "shared_game_ids": 2772,
+    "missing_old_game_ids": [],
+    "new_existing_scope_game_ids": [],
+    "changed_inspected_game_fields": [],
+    "fields_compared": [
+      "started_at_utc",
+      "blue_team_id",
+      "red_team_id",
+      "blue_won",
+      "source_season"
+    ],
+    "limitation": "Comparison covers these canonical game fields only, not full raw rows or all statistics. The previous raw bytes were replaced by the user and cannot be reconstructed from a checksum."
+  },
+  "output_sha256": {
+    "candidate_games.csv": "b34103e0de706a8cda36c3340708ae69d7e8c31466b480efeb82c67def7cc2f0",
+    "candidate_series.csv": "3bc6e0a277d53a4722c3f6ad9c602b27de6b4fe7f09d99767ea0348731099230"
+  }
+}

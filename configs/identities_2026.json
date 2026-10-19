@@ -1,0 +1,36 @@
+{
+  "policy": "Preserve provider IDs except for explicitly reviewed, dated aliases. Regions describe competitive ecosystems, not player nationalities. Region evidence must be observed at or before each game; out-of-pool membership metadata supplies no outcomes or performance features.",
+  "team_aliases": [
+    {
+      "source_team_id": "oe:team:ee140e8e9d6abd0bfd2b7bc94639d43",
+      "canonical_team_id": "oe:team:740de582f50775c516c77ed7b923fd5",
+      "canonical_name": "Team Secret Whales",
+      "source_leagues": ["EWC"],
+      "valid_from_utc": "2026-05-20T00:00:00Z",
+      "valid_until_utc_exclusive": "2026-07-20T00:00:00Z",
+      "evidence": "Organizer identifies Team Secret as the LCP representative. Source EWC Team Secret and LCP Team Secret Whales share Pun, Hizto, Dire, Eddie and Bie with identical player IDs before and during the event. This is a retrospective identity correction, not a future performance feature.",
+      "source_url": "https://ewc-web.prod.esf-systems.com/en/competitions/2026/league-of-legends"
+    }
+  ],
+  "additional_region_metadata_leagues": {
+    "LFL": {
+      "region": "EMEA",
+      "evidence": "Use pre-cutoff 2026 source participation metadata to identify EWC qualifier entrants Galions and Solary. Do not import LFL outcomes or statistics into the clean game pool.",
+      "source_url": "https://www.youtube.com/watch?v=Gdw3PAy4VZI"
+    }
+  },
+  "series": {
+    "maximum_continuation_gap_hours": 6,
+    "policy": "Prefer shared source match references. Otherwise group consecutive game numbers for the same teams and competition context. A new game 1 always starts a new series. Inferred groups remain provisional; never infer best-of or completion from observed score.",
+    "overrides": [
+      {
+        "series_reference": "LCK:2026-08-01:GenG-DplusKia",
+        "game_ids": ["game:4606cb664c95d28060d06c67"],
+        "evidence_url": "https://gol.gg/game/stats/80675/page-summary/",
+        "best_of": 3,
+        "known_missing_game_numbers": [1],
+        "note": "Source CSV contains only game 2 (LOLTMNT02_444730) for this matchup/date. The provider's game-1 page and BO3 summary establish the missing observation and series identity. Do not import an external winner, fabricate player/game records, or claim the observed score is final."
+      }
+    ]
+  }
+}

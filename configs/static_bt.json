@@ -1,0 +1,21 @@
+{
+  "model": "static_region_team_bradley_terry_v1",
+  "sampler": "numpyro",
+  "max_tree_depth": 10,
+  "region_scale_prior": 1.0,
+  "team_scale_prior": 1.0,
+  "draws": 1000,
+  "tune": 1000,
+  "chains": 4,
+  "target_accept": 0.95,
+  "seed": 20261018,
+  "prior_draws": 1000,
+  "result_delay_minutes": 60,
+  "diagnostic_limits": {
+    "max_rhat": 1.01,
+    "min_bulk_ess": 400,
+    "min_tail_ess": 400,
+    "min_bfmi": 0.3,
+    "max_divergences": 0
+  }
+}

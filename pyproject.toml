@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "worlds-predictor"
+version = "0.1.0"
+description = "Learn machine learning through reproducible professional LoL forecasts"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+bayes = ["pymc==5.25.1", "arviz==0.22.0", "numpy==2.3.5", "matplotlib==3.10.7", "numpyro==0.19.0", "jax==0.7.2", "jaxlib==0.7.2"]
+
+[project.scripts]
+worlds-predictor = "worlds_predictor.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

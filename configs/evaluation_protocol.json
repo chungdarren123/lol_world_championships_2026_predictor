@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "task": "frozen_pre_tournament_game_probabilities",
+  "purpose": "Historical development backtests, not an untouched research test: 2026 outcomes already appeared in full-pool diagnostics.",
+  "selection_rule": "Choose model/settings using historical backtests only; freeze before any Swiss 2026 outcomes. Do not describe the earlier September Elo test as untouched.",
+  "folds": [
+    {"id": "fst_2026", "fit_before_utc": "2026-03-16T00:00:00Z", "event": "First Stand", "stage": "main_event", "start_utc": "2026-03-16T00:00:00Z", "end_utc_exclusive": "2026-03-23T00:00:00Z", "source": "https://lolesports.com/en-AU/news/season-start-2026-lol-esports"},
+    {"id": "msi_2026", "fit_before_utc": "2026-06-28T00:00:00Z", "event": "MSI", "stage": "main_event", "start_utc": "2026-06-28T00:00:00Z", "end_utc_exclusive": "2026-07-13T00:00:00Z", "source": "https://lolesports.com/en-US/news/msi-and-worlds-updates"},
+    {"id": "ewc_2026", "fit_before_utc": "2026-07-15T00:00:00Z", "event": "EWC", "stage": "main_event", "start_utc": "2026-07-15T00:00:00Z", "end_utc_exclusive": "2026-07-20T00:00:00Z", "source": "https://ewc-web.prod.esf-systems.com/en/competitions/2026/league-of-legends"}
+  ],
+  "freeze_model_for_entire_event": true,
+  "purge_training_series_overlapping_fit_boundary": true,
+  "unknown_missing_games": "Provisional source series and publication times remain limitations. No claim of official complete-series recovery.",
+  "target_context": "Unknown future map side is excluded from deployable inputs or marginalized under a documented pre-draft selection model. Conditional-on-realized-side diagnostics are separate from tournament forecast evaluation.",
+  "historical_prior_policy": "Only records available before each fold may inform priors or preprocessing. Earlier team effects are season-specific. Cross-season regional bridges must be reviewed and specified before fitting.",
+  "comparators": ["constant_50_percent", "nonhierarchical_bradley_terry", "hierarchical_static", "hierarchical_with_side", "hierarchical_with_time", "hierarchical_with_side_and_time"],
+  "temporal_specification": "Not finalized; requires discussion before fitting a temporal variant.",
+  "metrics": ["log_loss", "brier", "calibration", "accuracy", "games", "series", "same_region_and_cross_region_breakdowns"],
+  "uncertainty": "Do not treat games from the same series as independent replicates for confidence intervals. Model posterior uncertainty is distinct from evaluation sampling uncertainty.",
+  "prospective_evaluation": "The frozen post-draw Worlds 2026 Swiss forecast is evaluated separately once outcomes occur, without updating its initial predictions."
+}

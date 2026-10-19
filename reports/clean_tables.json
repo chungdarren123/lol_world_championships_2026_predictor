@@ -1,0 +1,368 @@
+{
+  "status": "built_with_documented_assumptions",
+  "training_readiness": "not_established",
+  "source": {
+    "file_name": "2026_LoL_esports_match_data_from_OraclesElixir.csv",
+    "bytes": 78007452,
+    "sha256": "68bb4fd24bc7bfd643f0aba476ed6ad98e17a4812135cbf405295ba0f64c79d0",
+    "source_url": null,
+    "retrieved_at_utc": null,
+    "audited_at_utc": "2026-10-17T22:38:46.162336+00:00",
+    "availability_caveat": "Match timestamps do not prove data was published before the cutoff. A later download may contain backfills or corrections."
+  },
+  "selection_config": {
+    "season": 2026,
+    "cutoff_utc": "2026-10-15T18:00:00Z",
+    "cutoff_basis": "Scheduled first Play-In start; conservative forecast freeze, not a verified actual game-server start.",
+    "cutoff_source": "https://lolesports.com/en-GB/news/worlds-2026-primer",
+    "naive_timestamp_timezone": "UTC",
+    "timestamp_timezone_verified": false,
+    "duration_unit": "seconds",
+    "duration_unit_verified": false,
+    "retention_policy": {
+      "missing_timed_statistics": "Retain games and preserve missing values; do not replace with zero or impute in the audit.",
+      "lineup_changes": "Retain games and track the lineup actually used."
+    },
+    "season_exceptions": [
+      {
+        "id": "LCS_2027_promotion_played_2026",
+        "league": "LCS",
+        "source_season": 2027,
+        "start_utc": "2026-10-05T00:00:00Z",
+        "end_utc_exclusive": "2026-10-14T00:00:00Z",
+        "split": "",
+        "playoffs": "0",
+        "source": "https://lolesports.com/en-US/news/lcs-promotion-tournament-wsci"
+      },
+      {
+        "id": "CBLOL_2027_promotion_played_2026",
+        "league": "CBLOL",
+        "source_season": 2027,
+        "start_utc": "2026-09-28T00:00:00Z",
+        "end_utc_exclusive": "2026-10-14T00:00:00Z",
+        "split": "",
+        "playoffs": "0",
+        "source": "https://lolesports.com/pt-BR/lolesports/news/torneio-de-promoo-ao-cblol-wsci"
+      }
+    ],
+    "leagues": {
+      "LCK": {
+        "aliases": [
+          "LCK"
+        ],
+        "region": "Korea"
+      },
+      "LPL": {
+        "aliases": [
+          "LPL"
+        ],
+        "region": "China"
+      },
+      "LEC": {
+        "aliases": [
+          "LEC"
+        ],
+        "region": "EMEA"
+      },
+      "LCS": {
+        "aliases": [
+          "LCS"
+        ],
+        "region": "North America"
+      },
+      "LCP": {
+        "aliases": [
+          "LCP"
+        ],
+        "region": "Asia Pacific"
+      },
+      "CBLOL": {
+        "aliases": [
+          "CBLOL",
+          "CBLoL"
+        ],
+        "region": "Brazil"
+      },
+      "First Stand": {
+        "aliases": [
+          "FST",
+          "First Stand",
+          "First Stand Tournament"
+        ],
+        "region": null
+      },
+      "MSI": {
+        "aliases": [
+          "MSI"
+        ],
+        "region": null
+      },
+      "EWC": {
+        "aliases": [
+          "EWC"
+        ],
+        "region": null,
+        "stage_windows": [
+          {
+            "stage": "qualifiers",
+            "start_utc": "2026-01-01T00:00:00Z",
+            "end_utc_exclusive": "2026-07-15T00:00:00Z"
+          },
+          {
+            "stage": "main_event",
+            "start_utc": "2026-07-15T00:00:00Z",
+            "end_utc_exclusive": "2026-07-20T00:00:00Z"
+          }
+        ],
+        "stage_note": "Date-based classification for this source; source playoffs flag alone does not define event stage. Other dates remain explicitly unclassified.",
+        "source": "https://ewc-web.prod.esf-systems.com/en/competitions/2026/league-of-legends"
+      }
+    },
+    "worlds_aliases": [
+      "WLDs",
+      "WCS",
+      "Worlds",
+      "World Championship",
+      "Worlds 2026",
+      "2026 World Championship"
+    ],
+    "scope_note": "Reviewed regional/international allowlist including EWC main event and qualifiers. Retain missing timed stats and lineup changes. Include the approved LCS/CBLOL 2027 promotion events played in 2026 as explicit exceptions, preserving source season. Unknown labels remain held for review. Presence does not prove complete coverage."
+  },
+  "identity_config": {
+    "policy": "Preserve provider IDs except for explicitly reviewed, dated aliases. Regions describe competitive ecosystems, not player nationalities. Region evidence must be observed at or before each game; out-of-pool membership metadata supplies no outcomes or performance features.",
+    "team_aliases": [
+      {
+        "source_team_id": "oe:team:ee140e8e9d6abd0bfd2b7bc94639d43",
+        "canonical_team_id": "oe:team:740de582f50775c516c77ed7b923fd5",
+        "canonical_name": "Team Secret Whales",
+        "source_leagues": [
+          "EWC"
+        ],
+        "valid_from_utc": "2026-05-20T00:00:00Z",
+        "valid_until_utc_exclusive": "2026-07-20T00:00:00Z",
+        "evidence": "Organizer identifies Team Secret as the LCP representative. Source EWC Team Secret and LCP Team Secret Whales share Pun, Hizto, Dire, Eddie and Bie with identical player IDs before and during the event. This is a retrospective identity correction, not a future performance feature.",
+        "source_url": "https://ewc-web.prod.esf-systems.com/en/competitions/2026/league-of-legends"
+      }
+    ],
+    "additional_region_metadata_leagues": {
+      "LFL": {
+        "region": "EMEA",
+        "evidence": "Use pre-cutoff 2026 source participation metadata to identify EWC qualifier entrants Galions and Solary. Do not import LFL outcomes or statistics into the clean game pool.",
+        "source_url": "https://www.youtube.com/watch?v=Gdw3PAy4VZI"
+      }
+    },
+    "series": {
+      "maximum_continuation_gap_hours": 6,
+      "policy": "Prefer shared source match references. Otherwise group consecutive game numbers for the same teams and competition context. A new game 1 always starts a new series. Inferred groups remain provisional; never infer best-of or completion from observed score.",
+      "overrides": [
+        {
+          "series_reference": "LCK:2026-08-01:GenG-DplusKia",
+          "game_ids": [
+            "game:4606cb664c95d28060d06c67"
+          ],
+          "evidence_url": "https://gol.gg/game/stats/80675/page-summary/",
+          "best_of": 3,
+          "known_missing_game_numbers": [
+            1
+          ],
+          "note": "Source CSV contains only game 2 (LOLTMNT02_444730) for this matchup/date. The provider's game-1 page and BO3 summary establish the missing observation and series identity. Do not import an external winner, fabricate player/game records, or claim the observed score is final."
+        }
+      ]
+    }
+  },
+  "table_counts": {
+    "games": 2772,
+    "team_games": 5544,
+    "player_games": 27720,
+    "series": 1079,
+    "teams": 70,
+    "players": 441,
+    "team_aliases": 137,
+    "team_regions": 71
+  },
+  "series_status_counts": {
+    "provisional_sequence": 832,
+    "source_supported": 246,
+    "source_supported_partial": 1
+  },
+  "series_method_counts": {
+    "sequence_inferred": 832,
+    "source_reference": 247
+  },
+  "series_issues": [
+    {
+      "series_id": "series:0f1a237c20f4dffc157d31f6",
+      "issue": "known_missing_game_numbers:1"
+    }
+  ],
+  "quality_warnings": {},
+  "reviewed_alias_team_games": 8,
+  "games_missing_gold_15": 133,
+  "source_team_ids": 71,
+  "relational_validation": {
+    "game_team_player_links": "passed",
+    "cutoff_and_season_provenance": "passed",
+    "region_evidence_chronology": "passed",
+    "series_counts_and_observed_scores": "passed"
+  },
+  "runtime_python_version": "3.12.14",
+  "selection_config_sha256": "ca12c48914fb20396ca4def539b462348bcb64302808e495cf6ec19392ed537a",
+  "identity_config_sha256": "7ec96aa66d247a5a47bf5fe74945997edf734be4b6b832212604fe4459358bb1",
+  "limitations": [
+    "Naive source timestamps and duration units retain the unverified assumptions in the selection config.",
+    "Observed membership time is not a verified publication timestamp; region evidence is never taken from later games.",
+    "Team/player summaries are descriptive across the full pool, not historical model features.",
+    "Sequence-inferred series are provisional. Best-of, official winner, and completeness are not guessed.",
+    "Observed statistics and champion choices belong to the finished game; pre-draft features must use preceding games only.",
+    "No models were fitted. Missing values and lineup changes are retained."
+  ],
+  "package_source_sha256": "7fbece192938e2660e2d3a11635485b49f9190c3f136af6a7a39fdaa50deaf83",
+  "output_sha256": {
+    "games.csv": "684d240ebff4edd99dff0ee9d19e22f30fb11d2c609a706c7d2d3ade9f05739b",
+    "team_games.csv": "35873c6ad6de30877339a0211b18df4337ec06ea4f21d16c6864255e039ed929",
+    "player_games.csv": "583e48d33f2e6dad2b33b96f1e6ac33b37728d3c7449a041553b5fbcb35b8526",
+    "series.csv": "ccac0200684c3ec66d11ff0348b7492c3c6d24aa6c2ac33c869e465cbbfdb785",
+    "teams.csv": "1decbb551649a332f6db8d21767dc0cd04137dafaf0c8dd2200fd9f27e638ac4",
+    "players.csv": "c52a298d4434cf33c04262f4366b7fdfa033109c117de6d4fcc3e6a3972f5b09",
+    "team_aliases.csv": "bc0d9b2fddb9bd7a51727187b0c855b504da2bb011e480ec5a96fd5088d41f04",
+    "team_regions.csv": "5511d7f9f2d446c21f5c7197fa13cb285b792227fad0806edc57d45a1243140d"
+  },
+  "schemas": {
+    "games": [
+      "game_id",
+      "source_game_id",
+      "source_league",
+      "league",
+      "source_season",
+      "played_year",
+      "season_exception",
+      "stage",
+      "split",
+      "source_playoffs",
+      "started_at_utc",
+      "source_date",
+      "timestamp_timezone_assumed",
+      "patch",
+      "source_url",
+      "source_series_id",
+      "game_number",
+      "blue_team_id",
+      "red_team_id",
+      "blue_won",
+      "winner_team_id",
+      "series_id",
+      "series_method",
+      "series_status"
+    ],
+    "team_games": [
+      "game_id",
+      "team_id",
+      "source_team_id",
+      "source_team_name",
+      "identity_method",
+      "opponent_team_id",
+      "side",
+      "won",
+      "region",
+      "region_status",
+      "region_evidence_observed_at_utc",
+      "region_evidence_league",
+      "region_evidence_source_game_id",
+      "lineup_id",
+      "lineup_complete",
+      "lineup_player_ids",
+      "source_completeness",
+      "observed_first_pick",
+      "observed_kills",
+      "observed_deaths",
+      "observed_assists",
+      "observed_gold_diff_15",
+      "observed_xp_diff_15",
+      "observed_gold_at_15",
+      "observed_xp_at_15",
+      "observed_dragons",
+      "observed_barons",
+      "observed_towers",
+      "observed_duration_source_units"
+    ],
+    "player_games": [
+      "game_id",
+      "team_id",
+      "source_team_id",
+      "player_id",
+      "source_player_id",
+      "player_name",
+      "role",
+      "side",
+      "won",
+      "lineup_id",
+      "observed_champion",
+      "observed_kills",
+      "observed_deaths",
+      "observed_assists",
+      "observed_gold_diff_15",
+      "observed_xp_diff_15",
+      "observed_gold_at_15",
+      "observed_xp_at_15",
+      "observed_dragons",
+      "observed_barons",
+      "observed_towers",
+      "observed_duration_source_units"
+    ],
+    "series": [
+      "series_id",
+      "league",
+      "source_season",
+      "stage",
+      "split",
+      "team_a_id",
+      "team_b_id",
+      "first_observed_game_at_utc",
+      "last_observed_game_at_utc",
+      "observed_games",
+      "observed_wins_a",
+      "observed_wins_b",
+      "best_of",
+      "source_observations_complete",
+      "official_winner_team_id",
+      "resolution_method",
+      "resolution_status",
+      "source_reference",
+      "source_reference_method",
+      "evidence_url",
+      "issues"
+    ],
+    "teams": [
+      "team_id",
+      "display_name",
+      "observed_names",
+      "first_game_at_utc",
+      "last_game_at_utc",
+      "games"
+    ],
+    "team_aliases": [
+      "source_team_id",
+      "source_name",
+      "source_league",
+      "canonical_team_id",
+      "identity_method",
+      "first_observed_at_utc",
+      "last_observed_at_utc"
+    ],
+    "team_regions": [
+      "team_id",
+      "region",
+      "observed_at_utc",
+      "source_league",
+      "source_game_id",
+      "source_url"
+    ],
+    "players": [
+      "player_id",
+      "observed_names",
+      "first_game_at_utc",
+      "last_game_at_utc",
+      "games"
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "forecast_freeze_utc": "2026-10-19T00:00:00Z",
+  "freeze_basis": "Chosen post-draw reporting boundary, not an asserted exact draw-completion time. The official announcement URL's X snowflake decodes to 2026-10-18T20:31:22.645Z; direct timestamp/content retrieval was unavailable. Historical publication availability remains unverified.",
+  "draw_source": "https://lolesports.com/en-AU/tournament/115660540725177488/stage/115660540725570706",
+  "draw_verification": "Opening pairings match the official Swiss bracket inspected on 2026-10-19; that page is not an archived pre-freeze snapshot.",
+  "announcement_source": "https://x.com/lolesports/status/2111918080737862133",
+  "announcement_id": "2111918080737862133",
+  "announcement_time_independently_verified": false,
+  "swiss_first_scheduled_start_utc": "2026-10-23T17:00:00Z",
+  "schedule_source": "https://lolesports.com/en-GB/news/worlds-2026-primer",
+  "source_timezone": "UTC",
+  "source_timezone_verified": false,
+  "duration_unit": "seconds",
+  "duration_unit_verified": false,
+  "assumed_result_delay_minutes": 60,
+  "sources": {
+    "2024": "data/raw/2024_LoL_esports_match_data_from_OraclesElixir.csv",
+    "2025": "data/raw/2025_LoL_esports_match_data_from_OraclesElixir.csv",
+    "2026": "data/raw/2026_LoL_esports_match_data_from_OraclesElixir.csv"
+  },
+  "historical_events": [
+    {"year": 2024, "league": "MSI", "event": "MSI", "start": "2024-05-01T00:00:00Z", "end": "2024-05-20T00:00:00Z", "source": "https://lolesports.com/en-AU/news/msi-2024-primer"},
+    {"year": 2024, "league": "EWC", "event": "EWC", "start": "2024-07-04T00:00:00Z", "end": "2024-07-08T00:00:00Z", "source": null},
+    {"year": 2024, "league": "WLDs", "event": "Worlds", "start": "2024-09-25T00:00:00Z", "end": "2024-11-03T00:00:00Z", "source": "https://lolesports.com/en-GB/news/the-state-of-the-game-lol-esports-in-2024"},
+    {"year": 2025, "league": "FST", "event": "First Stand", "start": "2025-03-10T00:00:00Z", "end": "2025-03-17T00:00:00Z", "source": "https://lolesports.com/en-GB/news/fst-2025-primer"},
+    {"year": 2025, "league": "MSI", "event": "MSI", "start": "2025-06-27T00:00:00Z", "end": "2025-07-14T00:00:00Z", "source": "https://lolesports.com/en-GB/news/announcing-the-msi-2025-venue"},
+    {"year": 2025, "league": "EWC", "event": "EWC", "start": "2025-07-16T00:00:00Z", "end": "2025-07-21T00:00:00Z", "source": null},
+    {"year": 2025, "league": "WLDs", "event": "Worlds", "start": "2025-10-14T00:00:00Z", "end": "2025-11-10T00:00:00Z", "source": "https://lolesports.com/en-GB/news/worlds-2025-primer"}
+  ],
+  "historical_window_note": "UTC screening windows, not exact event start/finish timestamps. MSI 2025 includes the UTC July 13 finish of the July 12 Vancouver session. Null source entries remain organizer-corroboration tasks, never verified coverage claims.",
+  "membership_leagues": {
+    "2024": {"LCK": "Korea", "LPL": "China", "LEC": "EMEA", "LCS": "North America", "CBLOL": "Brazil", "LLA": "Latin America", "PCS": "PCS ecosystem", "LJL": "PCS ecosystem", "LCO": "PCS ecosystem", "VCS": "Vietnam"},
+    "2025": {"LCK": "Korea", "LPL": "China", "LEC": "EMEA", "LCP": "Asia Pacific", "LTA N": "LTA North", "LTA S": "LTA South"},
+    "2026": {"LCK": "Korea", "LPL": "China", "LEC": "EMEA", "LCS": "North America", "CBLOL": "Brazil", "LCP": "Asia Pacific", "LFL": "EMEA"}
+  },
+  "membership_policy": "Read dated provider team-ID participation only from these regional leagues, without importing out-of-pool outcomes or performance. Use same played year and observations at or before each candidate game. Historical effects remain year-specific; no cross-year region bridge is implemented.",
+  "membership_sources": [
+    "https://lolesports.com/en-PH/news/pacific-championship-series-2024-spring-split-kicks-off-on-19-jan",
+    "https://lolesports.com/ja-JP/news/pcs-2024-summer-playoffs",
+    "https://lolesports.com/en-US/news/introducing-league-of-legends-championship-of-the-americas",
+    "https://lolesports.com/en-AU/news/league-of-"
+  ],
+  "play_in": {
+    "start": "2026-10-15T00:00:00Z", "end": "2026-10-19T00:00:00Z", "expected_series": 6,
+    "team_names": ["Karmine Corp", "Cloud9", "MVK Esports", "FURIA"],
+    "source": "https://cdn.sanity.io/files/dsfx7636/news_live/faa5ce974e58615911fbee931c6123e2785a8b46.pdf"
+  },
+  "regional_qualifier_review": {
+    "source_league": "WLDs", "start": "2026-09-17T00:00:00Z", "end": "2026-09-20T00:00:00Z",
+    "source_match_ids": ["13506", "13507", "13508"],
+    "candidate_event": "LPL", "candidate_stage": "regional_qualifier",
+    "review_status": "pending_primary_event_confirmation",
+    "note": "Provider IDs/URLs and dated domestic participants identify 12 likely regional-final games excluded by the original blanket WLDs rule. Inventory separately; do not silently include them in training."
+  },
+  "round_one": [["GEN", "IG"], ["TLAW", "CFO"], ["AL", "KC"], ["G2", "DK"], ["HLE", "TES"], ["LOS", "T1"], ["TSW", "LYON"], ["BLG", "MKOI"]]
+}

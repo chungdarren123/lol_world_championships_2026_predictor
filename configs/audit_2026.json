@@ -1,0 +1,58 @@
+{
+  "season": 2026,
+  "cutoff_utc": "2026-10-15T18:00:00Z",
+  "cutoff_basis": "Scheduled first Play-In start; conservative forecast freeze, not a verified actual game-server start.",
+  "cutoff_source": "https://lolesports.com/en-GB/news/worlds-2026-primer",
+  "naive_timestamp_timezone": "UTC",
+  "timestamp_timezone_verified": false,
+  "duration_unit": "seconds",
+  "duration_unit_verified": false,
+  "retention_policy": {
+    "missing_timed_statistics": "Retain games and preserve missing values; do not replace with zero or impute in the audit.",
+    "lineup_changes": "Retain games and track the lineup actually used."
+  },
+  "season_exceptions": [
+    {
+      "id": "LCS_2027_promotion_played_2026",
+      "league": "LCS",
+      "source_season": 2027,
+      "start_utc": "2026-10-05T00:00:00Z",
+      "end_utc_exclusive": "2026-10-14T00:00:00Z",
+      "split": "",
+      "playoffs": "0",
+      "source": "https://lolesports.com/en-US/news/lcs-promotion-tournament-wsci"
+    },
+    {
+      "id": "CBLOL_2027_promotion_played_2026",
+      "league": "CBLOL",
+      "source_season": 2027,
+      "start_utc": "2026-09-28T00:00:00Z",
+      "end_utc_exclusive": "2026-10-14T00:00:00Z",
+      "split": "",
+      "playoffs": "0",
+      "source": "https://lolesports.com/pt-BR/lolesports/news/torneio-de-promoo-ao-cblol-wsci"
+    }
+  ],
+  "leagues": {
+    "LCK": {"aliases": ["LCK"], "region": "Korea"},
+    "LPL": {"aliases": ["LPL"], "region": "China"},
+    "LEC": {"aliases": ["LEC"], "region": "EMEA"},
+    "LCS": {"aliases": ["LCS"], "region": "North America"},
+    "LCP": {"aliases": ["LCP"], "region": "Asia Pacific"},
+    "CBLOL": {"aliases": ["CBLOL", "CBLoL"], "region": "Brazil"},
+    "First Stand": {"aliases": ["FST", "First Stand", "First Stand Tournament"], "region": null},
+    "MSI": {"aliases": ["MSI"], "region": null},
+    "EWC": {
+      "aliases": ["EWC"],
+      "region": null,
+      "stage_windows": [
+        {"stage": "qualifiers", "start_utc": "2026-01-01T00:00:00Z", "end_utc_exclusive": "2026-07-15T00:00:00Z"},
+        {"stage": "main_event", "start_utc": "2026-07-15T00:00:00Z", "end_utc_exclusive": "2026-07-20T00:00:00Z"}
+      ],
+      "stage_note": "Date-based classification for this source; source playoffs flag alone does not define event stage. Other dates remain explicitly unclassified.",
+      "source": "https://ewc-web.prod.esf-systems.com/en/competitions/2026/league-of-legends"
+    }
+  },
+  "worlds_aliases": ["WLDs", "WCS", "Worlds", "World Championship", "Worlds 2026", "2026 World Championship"],
+  "scope_note": "Reviewed regional/international allowlist including EWC main event and qualifiers. Retain missing timed stats and lineup changes. Include the approved LCS/CBLOL 2027 promotion events played in 2026 as explicit exceptions, preserving source season. Unknown labels remain held for review. Presence does not prove complete coverage."
+}
